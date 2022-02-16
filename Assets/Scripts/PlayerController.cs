@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _facingRight = true;
         _animator = GetComponentInChildren<Animator>();
     }
 
-    private void Update()
+    void Update()
     {
         switch (playerStats.currentState)
         {
@@ -45,11 +46,11 @@ public class PlayerController : MonoBehaviour
             ? PlayerStats.States.Idle
             : playerStats.currentState = PlayerStats.States.Walking;
 
-        if (_facingRight && input.x < 0)
+        if (_facingRight && input.x > 0)
         {
             Flip();
         }
-        else if (!_facingRight && input.x > 0)
+        else if (!_facingRight && input.x < 0)
         {
             Flip();
         }
