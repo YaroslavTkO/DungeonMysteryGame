@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         switch (playerStats.currentState)
         {
