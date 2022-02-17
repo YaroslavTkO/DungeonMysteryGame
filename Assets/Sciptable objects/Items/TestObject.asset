@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebb8ecb532f7cf46b8843fe0d1a9cca, type: 3}
   m_Name: TestObject
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1906061484689395840, guid: be46310ffe969054cabd3f2aa2efb903, type: 3}
   type: 2
-  description: 
+  description: 'Test kokdosfojddojmsodjkd
+
+    dsdsdsds
+
+    ss
+
+    dsdsds'
