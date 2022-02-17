@@ -46,11 +46,11 @@ public class PlayerController : MonoBehaviour
             ? PlayerStats.States.Idle
             : playerStats.currentState = PlayerStats.States.Walking;
 
-        if (_facingRight && input.x > 0)
+        if (_facingRight && input.x < 0)
         {
             Flip();
         }
-        else if (!_facingRight && input.x < 0)
+        else if (!_facingRight && input.x > 0)
         {
             Flip();
         }
