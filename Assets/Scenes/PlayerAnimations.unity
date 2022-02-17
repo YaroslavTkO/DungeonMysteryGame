@@ -217,6 +217,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterController
       objectReference: {fileID: 0}
+    - target: {fileID: 3701736323755214289, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701736323755214289, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701736323755214289, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701736323755214382, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7277849323538952001, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
       propertyPath: m_RootOrder
       value: 1
