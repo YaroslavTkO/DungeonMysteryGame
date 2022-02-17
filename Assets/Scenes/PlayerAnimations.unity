@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411039469}
   - component: {fileID: 411039470}
+  - component: {fileID: 411039471}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -288,6 +289,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &411039471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411039468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aa14eb500f5794f9709fd79df36db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 411039470}
 --- !u!1 &823059792
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720842009}
   - component: {fileID: 1720842010}
+  - component: {fileID: 1720842011}
   m_Layer: 5
   m_Name: StaminaBar
   m_TagString: Untagged
@@ -703,6 +718,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1720842011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720842008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aa14eb500f5794f9709fd79df36db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1720842010}
 --- !u!1 &1753450664
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +818,7 @@ GameObject:
   - component: {fileID: 1861277916}
   - component: {fileID: 1861277915}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1010,6 +1038,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 41852894, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 411039471}
+    - target: {fileID: 41852894, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 1720842011}
     - target: {fileID: 1391333050793113309, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
       propertyPath: m_Name
       value: CharacterController

@@ -19,38 +19,40 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
         switch (playerStats.currentState)
         {
             case PlayerStats.States.Idle:
-                _direction = HandleInput();
                 _animator.SetBool("Running", false);
+                ChangeStaminaValue(0.03f);
+                _direction = HandleInput() * 0;
                 break;
             case PlayerStats.States.Walking:
-                _direction = HandleInput();
                 _animator.SetBool("Running", true);
+                ChangeStaminaValue(-0.01f);
+                _direction = HandleInput();
                 break;
             case PlayerStats.States.Attacking:
                 _direction = Vector2.zero;
                 Attack();
                 break;
-                
         }
     }
 
     private void FixedUpdate()
     {
-        _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.movementSpeed * Time.deltaTime);
+        if (playerStats.stamina > 20)
+        {
+            _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.movementSpeed * Time.deltaTime);
+        }
+        else _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.exhaustedMovementSpeed * Time.deltaTime);
     }
 
     private Vector2 HandleInput()
     {
-        
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
         playerStats.currentState = input == Vector2.zero
             ? PlayerStats.States.Idle
-            : playerStats.currentState = PlayerStats.States.Walking;
+            : PlayerStats.States.Walking;
 
         if (_facingRight && input.x < 0)
         {
@@ -61,12 +63,15 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && playerStats.stamina >= 20)
         {
+            ChangeHpValue(-10);
+            ChangeStaminaValue(-10);
             playerStats.currentState = PlayerStats.States.Attacking;
             _animator.SetTrigger("Attack");
             _savedAttackStartTime = Time.time;
         }
+
         return input.normalized;
     }
 
@@ -84,5 +89,30 @@ public class PlayerController : MonoBehaviour
             playerStats.currentState = PlayerStats.States.Walking;
         }
     }
-    
+
+    private void ChangeHpValue(float changeValue)
+    {
+        if (playerStats.hp + changeValue < 0)
+        {
+            playerStats.hp = 0;
+        }
+        else if (playerStats.hp + changeValue > playerStats.maxHp)
+        {
+            playerStats.hp = playerStats.maxHp;
+        }
+        else playerStats.hp += changeValue;
+    }
+
+    private void ChangeStaminaValue(float changeValue)
+    {
+        if (playerStats.stamina + changeValue < 0)
+        {
+            playerStats.stamina = 0;
+        }
+        else if (playerStats.stamina + changeValue > playerStats.maxStamina)
+        {
+            playerStats.stamina = playerStats.maxStamina;
+        }
+        else playerStats.stamina += changeValue;
+    }
 }
