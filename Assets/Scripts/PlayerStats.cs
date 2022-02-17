@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     public States currentState;
     public HealthBar healthBar;
     public HealthBar staminaBar;
+    
 
     private void Start()
     {

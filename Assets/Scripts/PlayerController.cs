@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         }
         else _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.exhaustedMovementSpeed * Time.deltaTime);
     }
-
+    
     private Vector2 HandleInput()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -115,4 +115,6 @@ public class PlayerController : MonoBehaviour
         }
         else playerStats.stamina += changeValue;
     }
+
+    
 }
