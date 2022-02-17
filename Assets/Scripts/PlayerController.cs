@@ -7,28 +7,31 @@ public class PlayerController : MonoBehaviour
     private bool _facingRight = true;
     private float _savedRollStartTime;
     private float _savedAttackStartTime;
+    private Rigidbody2D _rigidbody2D;
 
     private void Start()
     {
         _facingRight = true;
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         switch (playerStats.currentState)
         {
             case PlayerStats.States.Idle:
-                transform.Translate(HandleInput() * playerStats.movementSpeed * Time.deltaTime);
+                _rigidbody2D.MovePosition(_rigidbody2D.position + HandleInput() * playerStats.movementSpeed * Time.deltaTime);
                 _animator.SetBool("Running", false);
                 break;
             case PlayerStats.States.Walking:
-                transform.Translate(HandleInput() * playerStats.movementSpeed * Time.deltaTime);
+                _rigidbody2D.MovePosition(_rigidbody2D.position + HandleInput() *playerStats.movementSpeed * Time.deltaTime);
                 _animator.SetBool("Running", true);
                 break;
             case PlayerStats.States.Rolling:
-                transform.Translate( new Vector2(_facingRight?1:-1, 0)*playerStats.movementSpeed * Time.deltaTime);
-                Roll();
+               // transform.Translate();
+                _rigidbody2D.MovePosition(_rigidbody2D.position + new Vector2(_facingRight?1:-1, 0) *playerStats.movementSpeed * Time.deltaTime);
+                Roll(); 
                 break;
             case PlayerStats.States.Attacking:
                 Attack();
