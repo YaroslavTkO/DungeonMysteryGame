@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -5,9 +6,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerStats playerStats;
     private Animator _animator;
     private bool _facingRight = true;
-    private float _savedRollStartTime;
     private float _savedAttackStartTime;
     private Rigidbody2D _rigidbody2D;
+    private Vector2 _direction;
 
     private void Start()
     {
@@ -16,28 +17,30 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        
         switch (playerStats.currentState)
         {
             case PlayerStats.States.Idle:
-                _rigidbody2D.MovePosition(_rigidbody2D.position + HandleInput() * playerStats.movementSpeed * Time.deltaTime);
+                _direction = HandleInput();
                 _animator.SetBool("Running", false);
                 break;
             case PlayerStats.States.Walking:
-                _rigidbody2D.MovePosition(_rigidbody2D.position + HandleInput() *playerStats.movementSpeed * Time.deltaTime);
+                _direction = HandleInput();
                 _animator.SetBool("Running", true);
                 break;
-            case PlayerStats.States.Rolling:
-               // transform.Translate();
-                _rigidbody2D.MovePosition(_rigidbody2D.position + new Vector2(_facingRight?1:-1, 0) *playerStats.movementSpeed * Time.deltaTime);
-                Roll(); 
-                break;
             case PlayerStats.States.Attacking:
+                _direction = Vector2.zero;
                 Attack();
                 break;
                 
         }
+    }
+
+    private void FixedUpdate()
+    {
+        _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.movementSpeed * Time.deltaTime);
     }
 
     private Vector2 HandleInput()
@@ -64,13 +67,6 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("Attack");
             _savedAttackStartTime = Time.time;
         }
-        else if (Input.GetKeyDown(KeyCode.C))
-        {
-            playerStats.currentState = PlayerStats.States.Rolling;
-            _animator.SetTrigger("Roll");
-            _savedRollStartTime = Time.time;
-        }
-
         return input.normalized;
     }
 
@@ -83,17 +79,10 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (Time.time - _savedAttackStartTime > _animator.GetCurrentAnimatorStateInfo(0).length - 0.25)
+        if (Time.time - _savedAttackStartTime > _animator.GetCurrentAnimatorStateInfo(0).length / 2)
         {
             playerStats.currentState = PlayerStats.States.Walking;
         }
     }
-
-    private void Roll()
-    {
-        if (Time.time - _savedRollStartTime > _animator.GetCurrentAnimatorStateInfo(0).length)
-        {
-            playerStats.currentState = PlayerStats.States.Walking;
-        }
-    }
+    
 }
