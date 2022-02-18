@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: NewInventory
   m_EditorClassIdentifier: 
   savePath: /inventory.txt
-  Container: []
+  database: {fileID: 11400000, guid: e54222ef7b3c2274fb4cdad29890bcf9, type: 2}
+  Container:
+    Items: []

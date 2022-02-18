@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ab7d811f939494daec73bd87659dc7, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1906061484689395840, guid: be46310ffe969054cabd3f2aa2efb903, type: 3}
+  Id: 1
+  uiDisplay: {fileID: 21300000, guid: 8708d80070522a043a1ab6a2b2775382, type: 3}
   type: 1
   description: Mega Omega Axe
-  defenceBonus: 0
-  attackBonus: 30
+  buffs:
+  - attribute: 3
+    value: 0
+    min: 5
+    max: 12
+  - attribute: 2
+    value: 0
+    min: 3
+    max: 4
