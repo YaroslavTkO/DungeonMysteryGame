@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebb8ecb532f7cf46b8843fe0d1a9cca, type: 3}
   m_Name: TestObject
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1906061484689395840, guid: be46310ffe969054cabd3f2aa2efb903, type: 3}
+  Id: 0
+  uiDisplay: {fileID: 21300000, guid: 45cfe68fb47a8514f96477d0fb432286, type: 3}
   type: 2
   description: 'Test kokdosfojddojmsodjkd
 
@@ -21,3 +22,4 @@ MonoBehaviour:
     ss
 
     dsdsds'
+  buffs: []

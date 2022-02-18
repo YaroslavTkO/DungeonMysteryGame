@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75ff20c3382484409e7f6c8aa3ec689, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1906061484689395840, guid: be46310ffe969054cabd3f2aa2efb903, type: 3}
+  Id: 3
+  uiDisplay: {fileID: 21300000, guid: 14c5c48283a8eeb4098db89eda4a48ff, type: 3}
   type: 0
   description: Bread is very important
-  restoreHealthValue: 20
+  buffs: []

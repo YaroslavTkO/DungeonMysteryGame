@@ -8,17 +8,17 @@ public class PlayerInventory : MonoBehaviour
     public InventoryObject inventory;
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var item = col.GetComponent<Item>();
+        var item = col.GetComponent<GroundItem>();
         if (item)
         {
-            inventory.AddItem(item.item, 1);
+            inventory.AddItem(new Item(item.item), 1);
             Destroy(col.gameObject);
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             inventory.Save();
         }
@@ -30,6 +30,6 @@ public class PlayerInventory : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items.Clear();
     }
 }
