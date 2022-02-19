@@ -1,19 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public enum ItemType
 {
+    Default,
     Food,
-    Equipment,
-    Default
+    Weapon,
+    Ring,
+    Helmet,
+    Armor,
+    Loot
 }
-public enum Attributes{
-    Agility,
-    Intellect,
-    Stamina,
-    Strength
+public enum Boosts{
+    SpeedBoost,
+    DefenceBoost,
+    AttackBoost,
+    HealthBoost,
+    EnergyBoost
 
 }
 public abstract class ItemObject : ScriptableObject
@@ -40,38 +42,40 @@ public class Item
 {
     public string Name;
     public int Id;
+    public ItemType type;
     public ItemBuff[] buffs;
 
     public Item(ItemObject obj)
     {
         Id = obj.Id;
         Name = obj.name;
+        type = obj.type;
         buffs = new ItemBuff[obj.buffs.Length];
         for (int i = 0; i < buffs.Length; i++)
         {
-            buffs[i] = new ItemBuff(obj.buffs[i].min, obj.buffs[i].max);
-            buffs[i].attribute = obj.buffs[i].attribute;
+            buffs[i] = new ItemBuff(obj.buffs[i].value);
+            buffs[i].boost = obj.buffs[i].boost;
         }
+    }
+    public Item()
+    {
+        Id = -1;
+        Name = null;
+        type = ItemType.Default;
+
     }
 }
 [System.Serializable]
 public class ItemBuff
 {
-    public Attributes attribute;
-    public int value;
-    public int min;
-    public int max;
+    public Boosts boost;
+    public float value;
 
-    public ItemBuff(int min, int max)
+    public ItemBuff(float value)
     {
-        this.max = max;
-        this.min = min;
-        GenerateValue();
+        this.value = value;
     }
 
-    public void GenerateValue()
-    {
-        value = UnityEngine.Random.Range(min, max);
-    }
+
     
 }

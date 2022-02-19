@@ -1,58 +1,38 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-public class DisplayInventory : MonoBehaviour
+public abstract class DisplayInventory : MonoBehaviour
 {
-    public MouseItem MouseItem = new MouseItem();
-    
+    public InventoryMouseInteraction MouseItem;
     public GameObject InventoryPrefab;
-    public Text text;
     public InventoryObject inventory;
-    public int xStart;
-    public int yStart;
-    public int xSpaceBetweenItems;
-    public int numberOfColumn;
-    public int ySpaceBetweenItems;
-    public List<GameObject> inventorySlotes;
-    private Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
-
-    private void Start()
-    {
-        CreateSlots();
-    }
-
-    private void Update()
-    {
-        UpdateSlots();
-    }
+    public List<GameObject> inventorySlots;
+    public Text DescriptionField;
+    protected Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
     public void UpdateSlots()
     {
         foreach (KeyValuePair<GameObject, InventorySlot> slot in itemsDisplayed)
-        {
-            if (slot.Value.ID >= 0)
             {
-                slot.Key.GetComponent<Image>().sprite = inventory.database.GetItem[slot.Value.item.Id].uiDisplay;
-                slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                slot.Key.GetComponentInChildren<Text>().text = slot.Value.amount == 1 ? "" : slot.Value.amount.ToString();
-            }
-            else
-            {
-                slot.Key.GetComponent<Image>().sprite = null;
-                slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                slot.Key.GetComponentInChildren<Text>().text = "";
-            }
+                if (slot.Value.ID >= 0)
+                {
+                    slot.Key.GetComponent<Image>().sprite = inventory.database.GetItem[slot.Value.item.Id].uiDisplay;
+                    slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    slot.Key.GetComponentInChildren<Text>().text =
+                        slot.Value.amount == 1 ? "" : slot.Value.amount.ToString();
+                }
+                else
+                {
+                    slot.Key.GetComponent<Image>().sprite = null;
+                    slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                    slot.Key.GetComponentInChildren<Text>().text = "";
+                }
 
-        }
+            }
     }
 
 
@@ -68,12 +48,18 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
             
 
         }
     }
 
+    public void OnPointerDown(GameObject obj)
+    {
+        DescriptionField.text = inventory.database.GetItem[itemsDisplayed[obj].ID].description;
+
+    }
     public void OnEnter(GameObject obj)
     {
         MouseItem.hoverObj = obj;
@@ -125,7 +111,7 @@ public class DisplayInventory : MonoBehaviour
         }
     }
 
-    private void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
+    protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
     {
         EventTrigger trigger = obj.GetComponent<EventTrigger>();
         var eventTrigger = new EventTrigger.Entry();
@@ -136,16 +122,9 @@ public class DisplayInventory : MonoBehaviour
 
     public Vector3 GetPosition(int i)
     {
-        return inventorySlotes[i].transform.localPosition;
+        return inventorySlots[i].transform.localPosition;
     }
 
     
 }
 
-public class MouseItem
-{
-    public GameObject obj;
-    public InventorySlot item;
-    public InventorySlot hoverItem;
-    public GameObject hoverObj;
-}

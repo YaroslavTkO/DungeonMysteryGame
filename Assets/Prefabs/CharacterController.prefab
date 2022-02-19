@@ -84,7 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153298d51b562e7449acdc8c8f3553e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: d744b339bff435948aadf6b60c8f163c, type: 2}
+  equippedInventory: {fileID: 11400000, guid: 5b37ec00cfde49149990f7ffb9a824e1, type: 2}
 --- !u!61 &6466965300863558399
 BoxCollider2D:
   m_ObjectHideFlags: 0
