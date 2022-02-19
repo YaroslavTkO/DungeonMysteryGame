@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,20 @@ public class DisplayPlayerInventory : DisplayInventory
 
     private void Start()
     {
+        inventory.OnChange += UpdateSlots;
+        equippedInventory.OnChange += UpdateSlots;
         CreateSlots();
+    }
+
+    private void OnDisable()
+    {
+        inventory.OnChange -= UpdateSlots;
+        equippedInventory.OnChange -= UpdateSlots;
     }
 
     private void Update()
     {
-        UpdateSlots();
+       // UpdateSlots();
     }
 
     private new void CreateSlots()
@@ -52,14 +61,18 @@ public class DisplayPlayerInventory : DisplayInventory
     {
         if (MouseItem.hoverObj)
         {
+            
             if (MouseItem.hoverItem.CheckAllowedTypeMatch(MouseItem.item.item) &&
-                (MouseItem.hoverItem.item.Id <= -1 || MouseItem.item.CheckAllowedTypeMatch(MouseItem.hoverItem.item)))
+                (MouseItem.hoverItem.ID <= -1 || MouseItem.item.CheckAllowedTypeMatch(MouseItem.hoverItem.item)))
             {
                 inventory.SwapItems(itemsDisplayed[obj], itemsDisplayed[MouseItem.hoverObj]);
             }
         }
         else if (trashCanEntered)
+        {
             inventory.RemoveItem(itemsDisplayed[obj].item);
+            equippedInventory.RemoveItem(itemsDisplayed[obj].item);
+        }
 
 
         Destroy(MouseItem.obj);

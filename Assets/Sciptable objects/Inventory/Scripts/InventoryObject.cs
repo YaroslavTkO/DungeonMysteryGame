@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
+using UnityEditor.Timeline.Actions;
 
 [CreateAssetMenu(fileName = "NewInventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
@@ -15,12 +16,19 @@ public class InventoryObject : ScriptableObject
     
     public ItemsDatabase database;
     public Inventory Container;
+    public bool isFull = false;
+    public delegate void InventoryChange();
+    public event InventoryChange OnChange;
     
+
     public void AddItem(Item _item, int _amount)
     {
+        
+        isFull = false;
         if (_item.buffs.Length > 0)
         {
             SetEmptySlot(_item, _amount);
+            OnChange?.Invoke();
             return;
         }
         for (int i = 0; i < Container.Items.Length; i++)
@@ -28,20 +36,24 @@ public class InventoryObject : ScriptableObject
             if (Container.Items[i].ID == _item.Id)
             {
                 Container.Items[i].AddAmount(_amount);
+                OnChange?.Invoke();
                 return;
             }
         }
 
         SetEmptySlot(_item, _amount);
+        OnChange?.Invoke();
     }
 
     public void RemoveItem(Item itemToRemove)
     {
+        
         for (int i = 0; i < Container.Items.Length; i++)
         {
             if (Container.Items[i].item == itemToRemove)
             {
                 Container.Items[i].UpdateSlot(-1, null, 0);
+                OnChange?.Invoke();
             }
             
         }
@@ -49,23 +61,29 @@ public class InventoryObject : ScriptableObject
 
     public void SwapItems(InventorySlot item1, InventorySlot item2)
     {
+        
         InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
         item2.UpdateSlot(item1.ID, item1.item, item1.amount);
         item1.UpdateSlot(temp.ID,temp.item, temp.amount);
+        OnChange?.Invoke();
     }
 
     public InventorySlot SetEmptySlot(Item _item, int _amount)
     {
+        
         for (int i = 0; i < Container.Items.Length; i++)
         {
             if (Container.Items[i].ID <= -1)
             {
                 Container.Items[i].UpdateSlot(_item.Id, _item, _amount);
+                OnChange?.Invoke();
                 return Container.Items[i];
             }
             
         }
-        //full inventory
+        OnChange?.Invoke();
+        isFull = true;
+        
         return null;
 
     }
@@ -81,6 +99,7 @@ public class InventoryObject : ScriptableObject
 
     public void Load()
     {
+        
         if (File.Exists($"{Application.persistentDataPath}{savePath}"))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -88,6 +107,7 @@ public class InventoryObject : ScriptableObject
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), Container);
             file.Close();
         }
+        OnChange?.Invoke();
     }
 
 }
@@ -114,6 +134,7 @@ public class InventorySlot
     public int ID;
     public Item item;
     public int amount;
+    
 
     public InventorySlot(int id, Item item, int amount)
     {

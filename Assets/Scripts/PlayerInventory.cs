@@ -7,23 +7,30 @@ public class PlayerInventory : MonoBehaviour
 {
     public InventoryObject inventory;
     public InventoryObject equippedInventory;
+    public GameObject inventoryGUI;
     private void OnTriggerEnter2D(Collider2D col)
     {
         var item = col.GetComponent<GroundItem>();
         if (item)
         {
             inventory.AddItem(new Item(item.item), 1);
-            Destroy(col.gameObject);
+            if (!inventory.isFull)
+                Destroy(col.gameObject);
         }
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            inventoryGUI.SetActive(true);
+        }
         if (Input.GetKeyDown(KeyCode.Z))
         {
             inventory.Save();
             equippedInventory.Save();
         }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             inventory.Load();

@@ -8,40 +8,30 @@ using Image = UnityEngine.UI.Image;
 public abstract class DisplayInventory : MonoBehaviour
 {
     public InventoryMouseInteraction MouseItem;
-    
     public GameObject InventoryPrefab;
     public InventoryObject inventory;
     public List<GameObject> inventorySlots;
     protected Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
-    private void Start()
-    {
-        CreateSlots();
-    }
-
-    private void Update()
-    {
-        UpdateSlots();
-    }
-
     public void UpdateSlots()
     {
         foreach (KeyValuePair<GameObject, InventorySlot> slot in itemsDisplayed)
-        {
-            if (slot.Value.ID >= 0)
             {
-                slot.Key.GetComponent<Image>().sprite = inventory.database.GetItem[slot.Value.item.Id].uiDisplay;
-                slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                slot.Key.GetComponentInChildren<Text>().text = slot.Value.amount == 1 ? "" : slot.Value.amount.ToString();
-            }
-            else
-            {
-                slot.Key.GetComponent<Image>().sprite = null;
-                slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                slot.Key.GetComponentInChildren<Text>().text = "";
-            }
+                if (slot.Value.ID >= 0)
+                {
+                    slot.Key.GetComponent<Image>().sprite = inventory.database.GetItem[slot.Value.item.Id].uiDisplay;
+                    slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    slot.Key.GetComponentInChildren<Text>().text =
+                        slot.Value.amount == 1 ? "" : slot.Value.amount.ToString();
+                }
+                else
+                {
+                    slot.Key.GetComponent<Image>().sprite = null;
+                    slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                    slot.Key.GetComponentInChildren<Text>().text = "";
+                }
 
-        }
+            }
     }
 
 
