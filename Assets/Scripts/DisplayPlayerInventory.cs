@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class DisplayPlayerInventory : DisplayInventory
 {
+    public bool trashCanEntered;
     public InventoryObject equippedInventory;
 
     private void Start()
@@ -56,17 +57,22 @@ public class DisplayPlayerInventory : DisplayInventory
             {
                 inventory.SwapItems(itemsDisplayed[obj], itemsDisplayed[MouseItem.hoverObj]);
             }
-
-            
-            
-
         }
-        else
-        {
+        else if (trashCanEntered)
             inventory.RemoveItem(itemsDisplayed[obj].item);
-        }
+
 
         Destroy(MouseItem.obj);
         MouseItem.item = null;
+    }
+
+    public void OnEnterTrashCan(GameObject obj)
+    {
+        trashCanEntered = true;
+    }
+
+    public void OnExitTrashCan(GameObject obj)
+    {
+        trashCanEntered = false;
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - house
   - map
+  - TrashCan
   layers:
   - Default
   - TransparentFX
