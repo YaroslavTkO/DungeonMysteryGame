@@ -45,6 +45,7 @@ public class DisplayPlayerInventory : DisplayInventory
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
         }
 
@@ -57,6 +58,7 @@ public class DisplayPlayerInventory : DisplayInventory
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             itemsDisplayed.Add(obj, equippedInventory.Container.Items[i]);
         }
     }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ab7d811f939494daec73bd87659dc7, type: 3}
   m_Name: "\u041A\u043E\u0436\u0430\u043D\u0430 \u0431\u0440\u043E\u043D\u044F"
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 5
   uiDisplay: {fileID: 6295813014500519340, guid: 38aa580623a25c74bb878227d751830b, type: 3}
   type: 5
-  description: 
+  description: dsdsdsd
   buffs:
   - boost: 1
     value: 3

@@ -11,6 +11,7 @@ public abstract class DisplayInventory : MonoBehaviour
     public GameObject InventoryPrefab;
     public InventoryObject inventory;
     public List<GameObject> inventorySlots;
+    public Text DescriptionField;
     protected Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
     public void UpdateSlots()
@@ -47,12 +48,18 @@ public abstract class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
             
 
         }
     }
 
+    public void OnPointerDown(GameObject obj)
+    {
+        DescriptionField.text = inventory.database.GetItem[itemsDisplayed[obj].ID].description;
+
+    }
     public void OnEnter(GameObject obj)
     {
         MouseItem.hoverObj = obj;
