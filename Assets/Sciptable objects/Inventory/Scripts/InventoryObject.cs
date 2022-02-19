@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization;
 using UnityEngine;
@@ -95,10 +96,21 @@ public class InventoryObject : ScriptableObject
 public class Inventory
 {
     public InventorySlot[] Items = new InventorySlot[18];
+    public void ClearInventory()
+    {
+        for (int i = 0; i < Items.Length; i++)
+        {
+            Items[i].amount = 0;
+            Items[i].item = new Item();
+            Items[i].ID = -1;
+
+        }
+    }
 }
 [System.Serializable]
 public class InventorySlot
 {
+    public ItemType AllowedType = 0;
     public int ID;
     public Item item;
     public int amount;
@@ -127,4 +139,12 @@ public class InventorySlot
     {
         amount += value;
     }
+
+    public bool CheckAllowedTypeMatch(Item item)
+    {
+        return AllowedType == ItemType.Default || item.type == AllowedType;
+
+    }
+
+    
 }

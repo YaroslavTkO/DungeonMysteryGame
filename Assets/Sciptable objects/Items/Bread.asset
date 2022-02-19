@@ -17,3 +17,5 @@ MonoBehaviour:
   type: 0
   description: Bread is very important
   buffs: []
+  restoreHealthAmount: 10
+  restoreEnergyAmount: 10

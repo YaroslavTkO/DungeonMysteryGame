@@ -1,29 +1,18 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-public class DisplayInventory : MonoBehaviour
+public abstract class DisplayInventory : MonoBehaviour
 {
-    public MouseItem MouseItem = new MouseItem();
+    public InventoryMouseInteraction MouseItem;
     
     public GameObject InventoryPrefab;
-    public Text text;
     public InventoryObject inventory;
-    public int xStart;
-    public int yStart;
-    public int xSpaceBetweenItems;
-    public int numberOfColumn;
-    public int ySpaceBetweenItems;
-    public List<GameObject> inventorySlotes;
-    private Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+    public List<GameObject> inventorySlots;
+    protected Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
 
     private void Start()
     {
@@ -125,7 +114,7 @@ public class DisplayInventory : MonoBehaviour
         }
     }
 
-    private void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
+    protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
     {
         EventTrigger trigger = obj.GetComponent<EventTrigger>();
         var eventTrigger = new EventTrigger.Entry();
@@ -136,16 +125,9 @@ public class DisplayInventory : MonoBehaviour
 
     public Vector3 GetPosition(int i)
     {
-        return inventorySlotes[i].transform.localPosition;
+        return inventorySlots[i].transform.localPosition;
     }
 
     
 }
 
-public class MouseItem
-{
-    public GameObject obj;
-    public InventorySlot item;
-    public InventorySlot hoverItem;
-    public GameObject hoverObj;
-}
