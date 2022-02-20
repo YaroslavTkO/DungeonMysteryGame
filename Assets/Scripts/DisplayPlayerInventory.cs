@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DisplayPlayerInventory : DisplayInventory
+public class DisplayPlayerInventory
 {
     public bool trashCanEntered;
     public InventoryObject equippedInventory;
@@ -68,8 +68,7 @@ public class DisplayPlayerInventory : DisplayInventory
         if (MouseItem.hoverObj)
         {
             
-            if (MouseItem.hoverItem.CheckAllowedTypeMatch(MouseItem.item.item) &&
-                (MouseItem.hoverItem.ID <= -1 || MouseItem.item.CheckAllowedTypeMatch(MouseItem.hoverItem.item)))
+            
             {
                 inventory.SwapItems(itemsDisplayed[obj], itemsDisplayed[MouseItem.hoverObj]);
             }
@@ -94,4 +93,4 @@ public class DisplayPlayerInventory : DisplayInventory
     {
         trashCanEntered = false;
     }
-}
+}*/

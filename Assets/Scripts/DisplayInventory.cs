@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -18,7 +18,7 @@ public abstract class DisplayInventory : MonoBehaviour
     {
         foreach (KeyValuePair<GameObject, InventorySlot> slot in itemsDisplayed)
             {
-                if (slot.Value.ID >= 0)
+                if (slot.Value.item.Id >= 0)
                 {
                     slot.Key.GetComponent<Image>().sprite = inventory.database.GetItem[slot.Value.item.Id].uiDisplay;
                     slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
@@ -57,7 +57,7 @@ public abstract class DisplayInventory : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
-        DescriptionField.text = inventory.database.GetItem[itemsDisplayed[obj].ID].description;
+        DescriptionField.text = inventory.database.GetItem[itemsDisplayed[obj].item.Id].description;
 
     }
     public void OnEnter(GameObject obj)
@@ -80,10 +80,10 @@ public abstract class DisplayInventory : MonoBehaviour
         var rectTransform = mouseObj.AddComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(35, 35);
         mouseObj.transform.SetParent(transform.parent);
-        if (itemsDisplayed[obj].ID >= 0)
+        if (itemsDisplayed[obj].item.Id >= 0)
         {
             var image = mouseObj.AddComponent<Image>();
-            image.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].uiDisplay;
+            image.sprite = inventory.database.GetItem[itemsDisplayed[obj].item.Id].uiDisplay;
             image.raycastTarget = false;
         }
 
@@ -126,5 +126,5 @@ public abstract class DisplayInventory : MonoBehaviour
     }
 
     
-}
+}*/
 

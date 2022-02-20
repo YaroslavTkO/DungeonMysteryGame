@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: Axe
+  m_Name: EmtyItem
   m_EditorClassIdentifier: 
-  id: 1
-  itemSprite: {fileID: 7586878660721680135, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 4
+  id: 0
+  itemSprite: {fileID: 0}
+  type: 0
   isStakable: 0
   boosts: []
-  description: 'Simple axe.
-
-    Perfect for killing monsters'
+  description: 

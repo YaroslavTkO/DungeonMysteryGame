@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +33,7 @@ public class InventoryObject : ScriptableObject
         }
         for (int i = 0; i < Container.Items.Length; i++)
         {
-            if (Container.Items[i].ID == _item.Id)
+            if (Container.Items[i].item.Id == _item.Id)
             {
                 Container.Items[i].AddAmount(_amount);
                 OnChange?.Invoke();
@@ -52,7 +52,7 @@ public class InventoryObject : ScriptableObject
         {
             if (Container.Items[i].item == itemToRemove)
             {
-                Container.Items[i].UpdateSlot(-1, null, 0);
+                Container.Items[i].UpdateSlot(null, 0);
                 OnChange?.Invoke();
             }
             
@@ -61,11 +61,14 @@ public class InventoryObject : ScriptableObject
 
     public void SwapItems(InventorySlot item1, InventorySlot item2)
     {
-        
-        InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
-        item2.UpdateSlot(item1.ID, item1.item, item1.amount);
-        item1.UpdateSlot(temp.ID,temp.item, temp.amount);
-        OnChange?.Invoke();
+        if (item2.CheckAllowedTypeMatch(item1.item) &&
+            (item2.item.Id <= -1 || item1.CheckAllowedTypeMatch(item2.item)))
+        {
+            InventorySlot temp = new InventorySlot(item2.item, item2.amount);
+            item2.UpdateSlot(item1.item, item1.amount);
+            item1.UpdateSlot(temp.item, temp.amount);
+            OnChange?.Invoke();
+        }
     }
 
     public InventorySlot SetEmptySlot(Item _item, int _amount)
@@ -73,9 +76,9 @@ public class InventoryObject : ScriptableObject
         
         for (int i = 0; i < Container.Items.Length; i++)
         {
-            if (Container.Items[i].ID <= -1)
+            if (Container.Items[i].item.Id <= -1)
             {
-                Container.Items[i].UpdateSlot(_item.Id, _item, _amount);
+                Container.Items[i].UpdateSlot(_item, _amount);
                 OnChange?.Invoke();
                 return Container.Items[i];
             }
@@ -122,7 +125,6 @@ public class Inventory
         {
             Items[i].amount = 0;
             Items[i].item = new Item();
-            Items[i].ID = -1;
 
         }
     }
@@ -131,27 +133,23 @@ public class Inventory
 public class InventorySlot
 {
     public ItemType AllowedType = 0;
-    public int ID;
     public Item item;
     public int amount;
     
 
-    public InventorySlot(int id, Item item, int amount)
+    public InventorySlot(Item item, int amount)
     {
-        ID = id;
         this.item = item;
         this.amount = amount;
     }
     public InventorySlot()
     {
-        ID = -1;
         item = null;
         amount = 0;
     }
 
-    public void UpdateSlot(int id, Item item, int amount)
+    public void UpdateSlot(Item item, int amount)
     {
-        ID = id;
         this.item = item;
         this.amount = amount;
     }
@@ -168,4 +166,4 @@ public class InventorySlot
     }
 
     
-}
+}*/
