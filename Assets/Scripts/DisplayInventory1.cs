@@ -125,6 +125,7 @@ public class DisplayInventory1 : MonoBehaviour
     {
         if (DisplayedItems.ContainsKey(obj))
             descriptionField.text = DisplayedItems[obj].item.description;
+        else descriptionField.text = "";
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
