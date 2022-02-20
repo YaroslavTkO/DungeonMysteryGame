@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2745545746297442993, guid: 5dc5c1f3512f36c459722a18405020c7, type: 3}
       propertyPath: m_Name
-      value: Dungeon Tileset_21 (1)
+      value: Dungeon Tileset_21 (1) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc5c1f3512f36c459722a18405020c7, type: 3}

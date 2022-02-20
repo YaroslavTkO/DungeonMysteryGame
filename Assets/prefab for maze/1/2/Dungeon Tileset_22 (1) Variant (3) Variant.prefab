@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401213763697511825, guid: 7942b39023313f848bdf98bbe450ae22, type: 3}
       propertyPath: m_Name
-      value: Dungeon Tileset_22 (1) Variant (3)
+      value: Dungeon Tileset_22 (1) Variant (3) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9222905227623756889, guid: 7942b39023313f848bdf98bbe450ae22, type: 3}
       propertyPath: m_SortingOrder
