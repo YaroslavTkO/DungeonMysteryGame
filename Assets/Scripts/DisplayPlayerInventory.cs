@@ -1,17 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class DisplayPlayerInventory : DisplayInventory
+public class DisplayPlayerInventory : DisplayInventory1
 {
-    public bool trashCanEntered;
-    public InventoryObject equippedInventory;
-
-    private void Start()
+    private bool inTrashCan;
+    public GameObject trashCan;
+    public Inventory equippedInventory;
+    void Start()
     {
         CreateSlots();
     }
@@ -28,70 +25,55 @@ public class DisplayPlayerInventory : DisplayInventory
         equippedInventory.OnChange -= UpdateSlots;
     }
 
-    private void Update()
-    {
-       // UpdateSlots();
-    }
-
     private new void CreateSlots()
     {
-        itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
-        for (int i = 0; i < inventory.Container.Items.Length; i++)
+        DisplayedItems = new Dictionary<GameObject, InventorySlot>();
+        for (int i = 0; i < inventory.slots.Length; i++)
         {
-            var obj = Instantiate(InventoryPrefab, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+            var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
+            obj.GetComponent<Transform>().position = slotsToPlaceObjects[i].transform.position;
             AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
             AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
-            itemsDisplayed.Add(obj, inventory.Container.Items[i]);
+            DisplayedItems.Add(obj, inventory.slots[i]);
         }
-
-        for (int i = 0; i < equippedInventory.Container.Items.Length; i++)
+        for (int i = 0; i < equippedInventory.slots.Length; i++)
         {
-            var obj = Instantiate(InventoryPrefab, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<RectTransform>().localPosition = GetPosition(i + inventory.Container.Items.Length);
+            var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
+            obj.GetComponent<Transform>().position = slotsToPlaceObjects[i + inventory.slots.Length].transform.position;
             AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
             AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
             AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
-            itemsDisplayed.Add(obj, equippedInventory.Container.Items[i]);
+            DisplayedItems.Add(obj, equippedInventory.slots[i]);
         }
     }
 
+    public void OnTrashCanEnter()
+    {
+        inTrashCan = true;
+    }
+    public void OnTrashCanExit()
+    {
+        inTrashCan = false;
+    }
     public new void OnDragEnd(GameObject obj)
     {
-        if (MouseItem.hoverObj)
+        if (MouseData.HoveredSlot != null)
         {
-            
-            if (MouseItem.hoverItem.CheckAllowedTypeMatch(MouseItem.item.item) &&
-                (MouseItem.hoverItem.ID <= -1 || MouseItem.item.CheckAllowedTypeMatch(MouseItem.hoverItem.item)))
-            {
-                inventory.SwapItems(itemsDisplayed[obj], itemsDisplayed[MouseItem.hoverObj]);
-            }
+            inventory.SwapItems(MouseData.HoveredSlot, MouseData.MouseItem);
         }
-        else if (trashCanEntered)
+        else if(inTrashCan)
         {
-            inventory.RemoveItem(itemsDisplayed[obj].item);
-            equippedInventory.RemoveItem(itemsDisplayed[obj].item);
+            inventory.RemoveItem(DisplayedItems[obj]);
+            equippedInventory.RemoveItem(DisplayedItems[obj]);
         }
-
-
-        Destroy(MouseItem.obj);
-        MouseItem.item = null;
-    }
-
-    public void OnEnterTrashCan(GameObject obj)
-    {
-        trashCanEntered = true;
-    }
-
-    public void OnExitTrashCan(GameObject obj)
-    {
-        trashCanEntered = false;
+        Destroy(MouseData.MouseObj);
+        MouseData.MouseItem = null;
     }
 }
