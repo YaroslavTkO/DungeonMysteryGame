@@ -22,6 +22,7 @@ public class Inventory : ScriptableObject
                 if (item.id == slot.item.id)
                 {
                     slot.ChangeQuantity(1);
+                    OnChange?.Invoke();
                     return true;
                 }
             }
@@ -33,6 +34,7 @@ public class Inventory : ScriptableObject
             {
                 slot.item = item;
                 slot.ChangeQuantity(1);
+                OnChange?.Invoke();
                 return true;
             }
         }
@@ -42,9 +44,14 @@ public class Inventory : ScriptableObject
 
     public void SwapItems(InventorySlot slot1, InventorySlot slot2)
     {
-        InventorySlot temp = new InventorySlot(slot2.item, slot2.amount);
-        slot2.UpdateSlot(slot1.item, slot1.amount);
-        slot1.UpdateSlot(temp.item, temp.amount);
+        if (slot1.CanPlaceInSlot(slot2.item) &&
+            (slot1.item.id == 0 || slot2.CanPlaceInSlot(slot1.item)))
+        {
+            InventorySlot temp = new InventorySlot(slot2.item, slot2.amount);
+            slot2.UpdateSlot(slot1.item, slot1.amount);
+            slot1.UpdateSlot(temp.item, temp.amount);
+            OnChange?.Invoke();
+        }
     }
 
     public void RemoveItem(InventorySlot item)
@@ -56,6 +63,8 @@ public class Inventory : ScriptableObject
                 slot.ClearSlot(database);
             }
         }
+
+        OnChange?.Invoke();
     }
 
     public void ClearInventory()
@@ -64,6 +73,8 @@ public class Inventory : ScriptableObject
         {
             slot.ClearSlot(database);
         }
+
+        OnChange?.Invoke();
     }
 
     public void Save()
@@ -85,5 +96,7 @@ public class Inventory : ScriptableObject
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
             file.Close();
         }
+
+        OnChange?.Invoke();
     }
 }

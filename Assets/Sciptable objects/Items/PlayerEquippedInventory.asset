@@ -14,4 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: a2102f12183037c4cbc6a596538065c2, type: 2}
   saveFileName: PlayerEquipment.eqp
-  slots: []
+  slots:
+  - typeOfSlot: 4
+    item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
+    amount: 0
+  - typeOfSlot: 6
+    item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
+    amount: 0
+  - typeOfSlot: 6
+    item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
+    amount: 0
+  - typeOfSlot: 3
+    item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
+    amount: 0
+  - typeOfSlot: 5
+    item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
+    amount: 0

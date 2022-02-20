@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,17 +11,27 @@ public class DisplayInventory1 : MonoBehaviour
     public GameObject slotObject;
     public GameObject[] slotsToPlaceObjects;
     public Text descriptionField;
-    private Dictionary<GameObject, InventorySlot> DisplayedItems = new Dictionary<GameObject, InventorySlot>();
-    private InventoryMouseData MouseData = new InventoryMouseData();
+    protected Dictionary<GameObject, InventorySlot> DisplayedItems = new Dictionary<GameObject, InventorySlot>();
+    protected InventoryMouseData MouseData = new InventoryMouseData();
 
     void Start()
     {
         CreateSlots();
     }
 
+    private void OnEnable()
+    {
+        inventory.OnChange += UpdateSlots;
+    }
+
+    private void OnDisable()
+    {
+        inventory.OnChange -= UpdateSlots;
+    }
+
     void Update()
     {
-        UpdateSlots();
+    //    UpdateSlots();
     }
 
     public void CreateSlots()
