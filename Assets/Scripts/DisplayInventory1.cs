@@ -18,19 +18,23 @@ public class DisplayInventory1 : MonoBehaviour
     {
         CreateSlots();
     }
-
+    
     private void OnEnable()
     {
+        UpdateSlots();
         inventory.OnChange += UpdateSlots;
+        Debug.Log("OnEnable called");
     }
 
     private void OnDisable()
     {
         inventory.OnChange -= UpdateSlots;
+        Debug.Log("OnDisable called");
     }
 
     void Update()
     {
+       // Debug.Log(Time.timeScale);
     //    UpdateSlots();
     }
 

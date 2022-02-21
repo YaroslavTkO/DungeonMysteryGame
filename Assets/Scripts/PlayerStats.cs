@@ -15,18 +15,24 @@ public class PlayerStats : MonoBehaviour
     public float maxHpWithoutBuffs = 100;
     public float maxHp = 100;
     public float hp = 100;
+    
     public float maxStaminaWithoutBuffs = 100;
     public float maxStamina = 100;
     public float stamina = 100;
+    
     public float movementSpeedWithoutBuffs = 5;
     public float movementSpeed = 5;
     public float exhaustedMovementSpeed = 2;
-    public float damageMultiplierWithoutBuffs;
-    public float damageMultiplier = 1.0f;
+    
+    public float damageWithoutBuffs;
+    public float damage = 1.0f;
+    
     public float experience = 0;
+    public int currentLevel = 1;
+    
     public States currentState;
-    public HealthBar healthBar;
-    public HealthBar staminaBar;
+    public Bar healthBar;
+    public Bar staminaBar;
     public PlayerInventory inventory;
 
     private void Start()
@@ -37,14 +43,15 @@ public class PlayerStats : MonoBehaviour
 
     private void OnEnable()
     {
-        inventory.equippedInventory.OnChange += EquipInventoryBuffs;
-        inventory.inventory.OnChange += EquipInventoryBuffs;
+        UpdateInventoryBuffs();
+        inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
+        inventory.inventory.OnChange += UpdateInventoryBuffs;
     }
 
     private void OnDisable()
     {
-        inventory.equippedInventory.OnChange -= EquipInventoryBuffs;
-        inventory.inventory.OnChange -= EquipInventoryBuffs;
+        inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
+        inventory.inventory.OnChange -= UpdateInventoryBuffs;
     }
 
     private void LateUpdate()
@@ -52,20 +59,42 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetValueOnBar(hp);
         staminaBar.SetValueOnBar(stamina);
     }
-
-    public void EquipInventoryBuffs()
+    public void ChangeHpValue(float changeValue)
     {
-        Debug.Log("Method Called");
+        if (hp + changeValue < 0)
+        {
+            hp = 0;
+        }
+        else if (hp + changeValue > maxHp)
+        {
+            hp = maxHp;
+        }
+        else hp += changeValue;
+    }
+
+    public void ChangeStaminaValue(float changeValue)
+    {
+        if (stamina + changeValue < 0)
+        {
+            stamina = 0;
+        }
+        else if (stamina + changeValue > maxStamina)
+        {
+            stamina = maxStamina;
+        }
+        else stamina += changeValue;
+    }
+
+    public void UpdateInventoryBuffs()
+    {
         maxHp = maxHpWithoutBuffs;
         maxStamina = maxStaminaWithoutBuffs;
         if (hp > maxHpWithoutBuffs)
             hp = maxHpWithoutBuffs;
         if (stamina > maxStaminaWithoutBuffs)
             stamina = maxStaminaWithoutBuffs;
-        if (movementSpeed > movementSpeedWithoutBuffs)
-            movementSpeed = movementSpeedWithoutBuffs;
-        if (damageMultiplier > damageMultiplierWithoutBuffs)
-            damageMultiplier = damageMultiplierWithoutBuffs;
+        movementSpeed = movementSpeedWithoutBuffs;
+        damage = damageWithoutBuffs;
         foreach (var slot in inventory.equippedInventory.slots)
         {
             if (slot.item.id == 0)
@@ -78,18 +107,46 @@ public class PlayerStats : MonoBehaviour
                         movementSpeed += boost.value;
                         break;
                     case Boost.AttackPower:
-                        damageMultiplier += boost.value;
+                        damage += boost.value;
                         break;
                     case Boost.MaxHealth:
                         maxHp += boost.value;
-                        healthBar.SetOnlyMaxValueOnBar(maxHp);
                         break;
                     case Boost.MaxStamina:
                         maxStamina += boost.value;
-                        staminaBar.SetOnlyMaxValueOnBar(maxStamina);
+                        
                         break;
                 }
             }
         }
+        staminaBar.SetOnlyMaxValueOnBar(maxStamina);
+        healthBar.SetOnlyMaxValueOnBar(maxHp);
+    }
+
+    public void LevelUp(int type)
+    {
+        if (experience >= currentLevel * 15)
+        {
+            experience -= currentLevel * 15;
+            currentLevel++;
+            switch (type)
+            {
+                case 1: maxHpWithoutBuffs += 10;
+                    break;
+                case 2: maxStaminaWithoutBuffs += 10;
+                    break;
+                case 3: movementSpeedWithoutBuffs += 0.1f;
+                    break;
+                case 4: damageWithoutBuffs += 1;
+                    break;
+            }
+            UpdateInventoryBuffs();
+        }
+
+    }
+
+    public void AddExperience(float amount)
+    {
+        experience += amount;
     }
 }

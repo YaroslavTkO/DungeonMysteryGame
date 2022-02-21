@@ -15,6 +15,7 @@ public class DisplayPlayerInventory : DisplayInventory1
 
     private void OnEnable()
     {
+        UpdateSlots();
         inventory.OnChange += UpdateSlots;
         equippedInventory.OnChange += UpdateSlots;
     }

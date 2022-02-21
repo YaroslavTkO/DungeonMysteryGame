@@ -23,12 +23,12 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerStats.States.Idle:
                 _animator.SetBool("Running", false);
-                ChangeStaminaValue(0.03f);
+                playerStats.ChangeStaminaValue(0.03f);
                 _direction = HandleInput() * 0;
                 break;
             case PlayerStats.States.Walking:
                 _animator.SetBool("Running", true);
-                ChangeStaminaValue(-0.01f);
+                playerStats.ChangeStaminaValue(-0.01f);
                 _direction = HandleInput();
                 break;
             case PlayerStats.States.Attacking:
@@ -65,8 +65,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && playerStats.stamina >= 20)
         {
-            ChangeHpValue(-10);
-            ChangeStaminaValue(-10);
+            playerStats.ChangeStaminaValue(-10);
             playerStats.currentState = PlayerStats.States.Attacking;
             _animator.SetTrigger("Attack");
             _savedAttackStartTime = Time.time;
@@ -90,31 +89,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ChangeHpValue(float changeValue)
-    {
-        if (playerStats.hp + changeValue < 0)
-        {
-            playerStats.hp = 0;
-        }
-        else if (playerStats.hp + changeValue > playerStats.maxHp)
-        {
-            playerStats.hp = playerStats.maxHp;
-        }
-        else playerStats.hp += changeValue;
-    }
-
-    private void ChangeStaminaValue(float changeValue)
-    {
-        if (playerStats.stamina + changeValue < 0)
-        {
-            playerStats.stamina = 0;
-        }
-        else if (playerStats.stamina + changeValue > playerStats.maxStamina)
-        {
-            playerStats.stamina = playerStats.maxStamina;
-        }
-        else playerStats.stamina += changeValue;
-    }
+    
 
     
 }
