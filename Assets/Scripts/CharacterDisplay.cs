@@ -29,6 +29,7 @@ public class CharacterDisplay : MonoBehaviour
         statsText[2].text = stats.movementSpeed.ToString("0.0");
         statsText[3].text = $"{stats.damage}";
         experienceText.text = $"Level {stats.currentLevel}, exp {stats.experience} / {stats.currentLevel * 15}";
+        experienceBar.SetMaxValueOnBar(stats.currentLevel * 15);
         experienceBar.SetValueOnBar(stats.experience);
     }
 }

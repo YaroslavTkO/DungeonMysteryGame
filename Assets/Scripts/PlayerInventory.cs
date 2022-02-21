@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
     public Inventory equippedInventory;
+    public Inventory foodInventory;
     public GameObject inventoryGUI;
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -28,12 +29,15 @@ public class PlayerInventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            foodInventory.Save();
             inventory.Save();
             equippedInventory.Save();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
+            foodInventory.Load();
             inventory.Load();
             equippedInventory.Load();
         }
@@ -43,5 +47,6 @@ public class PlayerInventory : MonoBehaviour
     {
         inventory.ClearInventory();
         equippedInventory.ClearInventory();
+        foodInventory.ClearInventory();
     }
 }
