@@ -10576,6 +10576,8 @@ GameObject:
   m_Component:
   - component: {fileID: 252185816}
   - component: {fileID: 252185817}
+  - component: {fileID: 252185819}
+  - component: {fileID: 252185818}
   m_Layer: 0
   m_Name: Dungeon Tileset_36
   m_TagString: map
@@ -10648,6 +10650,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &252185818
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252185815}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11995374}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.06456206}
+  m_EdgeRadius: 0
+--- !u!114 &252185819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252185815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439fe5a5251ae0f4fa873cfb0ad31a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: map
 --- !u!1 &255883005
 GameObject:
   m_ObjectHideFlags: 0
@@ -32053,6 +32094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterController
       objectReference: {fileID: 0}
+    - target: {fileID: 1391333050793113309, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3701736323755214289, guid: 9ddcf5ee1882dfc49950e23ec433d3b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -48322,18 +48367,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1251327193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251327186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 480535d1c8f7e9f4187830181217d628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1254135366
 GameObject:
   m_ObjectHideFlags: 0
