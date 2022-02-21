@@ -88,7 +88,6 @@ public class DisplayPlayerInventory : DisplayInventory1
 
     public new void OnDragEnd(GameObject obj)
     {
-        Debug.Log(Time.deltaTime);
         if (MouseData.HoveredSlot != null)
         {
             inventory.SwapItems(MouseData.HoveredSlot, MouseData.MouseItem);
