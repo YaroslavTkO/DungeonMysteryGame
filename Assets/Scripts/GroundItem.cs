@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class GroundItem : MonoBehaviour
 {
-    public ItemObject item;
+    public Item item;
     public void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = item.uiDisplay;
+        GetComponent<SpriteRenderer>().sprite = item.itemSprite;
     }
 }
