@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1920802767}
   m_Layer: 0
   m_Name: CharacterController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,17 +61,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 224e2234291fcbe489a206659c1e4ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHpWithoutBuffs: 100
   maxHp: 100
   hp: 100
+  maxStaminaWithoutBuffs: 100
   maxStamina: 100
   stamina: 100
+  movementSpeedWithoutBuffs: 5
   movementSpeed: 5
   exhaustedMovementSpeed: 2
-  damageMultiplier: 1
-  experience: 0
+  damageWithoutBuffs: 0
+  damage: 1
+  experience: 200
+  currentLevel: 1
   currentState: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
+  inventory: {fileID: 3446284691766703980}
 --- !u!114 &3446284691766703980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,8 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153298d51b562e7449acdc8c8f3553e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: d744b339bff435948aadf6b60c8f163c, type: 2}
-  equippedInventory: {fileID: 11400000, guid: 5b37ec00cfde49149990f7ffb9a824e1, type: 2}
+  inventory: {fileID: 11400000, guid: dba28a9b45e6e6c45aa7cba4bec32340, type: 2}
+  equippedInventory: {fileID: 11400000, guid: b62cd0408bc8eb447830660dd5ae9e1d, type: 2}
+  foodInventory: {fileID: 11400000, guid: 1916b23d057d6e84393a9b5cb0000592, type: 2}
+  inventoryGUI: {fileID: 0}
 --- !u!61 &6466965300863558399
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455091226050424334, guid: bd34723c49c12dd4598115f73baea8ea, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd34723c49c12dd4598115f73baea8ea, type: 3}

@@ -37,8 +37,8 @@ public enum Boost
 {
     MaxStamina,
     MaxHealth,
-    RegenHealthPower,
-    RegenStaminaPower,
+    HealAmount,
+    StaminaHealAmount,
     Speed,
     AttackPower
 }

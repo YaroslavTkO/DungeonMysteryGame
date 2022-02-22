@@ -14,9 +14,13 @@ public class InventorySlot
         this.item = item;
         this.amount = amount;
     }
-    public void ChangeQuantity(int amountToChange)
+    public void ChangeQuantity(int amountToChange, Database database)
     {
         amount += amountToChange;
+        if (amount <= 0)
+        {
+            ClearSlot(database);
+        }
     }
     public void ClearSlot(Database database)
     {

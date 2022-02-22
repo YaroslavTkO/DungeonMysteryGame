@@ -21,7 +21,7 @@ public class Inventory : ScriptableObject
             {
                 if (item.id == slot.item.id)
                 {
-                    slot.ChangeQuantity(1);
+                    slot.ChangeQuantity(1, database);
                     OnChange?.Invoke();
                     return true;
                 }
@@ -33,7 +33,7 @@ public class Inventory : ScriptableObject
             if (slot.item.id == 0)
             {
                 slot.item = item;
-                slot.ChangeQuantity(1);
+                slot.ChangeQuantity(1, database);
                 OnChange?.Invoke();
                 return true;
             }
