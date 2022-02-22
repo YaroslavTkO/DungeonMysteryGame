@@ -2,94 +2,33 @@ using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
-    [SerializeField] private PlayerStats playerStats;
-    private Animator _animator;
-    private bool _facingRight = true;
-    private float _savedAttackStartTime;
+{ 
+    public PlayerStats playerStats;
+    public Animator _animator;
+    public bool _facingRight = true;
     private Rigidbody2D _rigidbody2D;
-    private Vector2 _direction;
+    private State currentState;
 
     private void Start()
     {
+        
         _facingRight = true;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        currentState = new StateIdle(this);
     }
-
     void Update()
     {
-        switch (playerStats.currentState)
-        {
-            case PlayerStats.States.Idle:
-                _animator.SetBool("Running", false);
-                playerStats.ChangeStaminaValue(0.03f);
-                _direction = HandleInput() * 0;
-                break;
-            case PlayerStats.States.Walking:
-                _animator.SetBool("Running", true);
-                playerStats.ChangeStaminaValue(-0.01f);
-                _direction = HandleInput();
-                break;
-            case PlayerStats.States.Attacking:
-                _direction = Vector2.zero;
-                Attack();
-                break;
-        }
+        currentState = currentState.Update();
     }
-
     private void FixedUpdate()
     {
-        if (playerStats.stamina > 20)
-        {
-            _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.movementSpeed * Time.deltaTime);
-        }
-        else _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * playerStats.exhaustedMovementSpeed * Time.deltaTime);
+        _rigidbody2D.MovePosition(_rigidbody2D.position + currentState.FixedUpdate());
     }
-    
-    private Vector2 HandleInput()
-    {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        playerStats.currentState = input == Vector2.zero
-            ? PlayerStats.States.Idle
-            : PlayerStats.States.Walking;
-
-        if (_facingRight && input.x < 0)
-        {
-            Flip();
-        }
-        else if (!_facingRight && input.x > 0)
-        {
-            Flip();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse1) && playerStats.stamina >= 20)
-        {
-            playerStats.ChangeStaminaValue(-10);
-            playerStats.currentState = PlayerStats.States.Attacking;
-            _animator.SetTrigger("Attack");
-            _savedAttackStartTime = Time.time;
-        }
-
-        return input.normalized;
-    }
-
-    private void Flip()
+    public void Flip()
     {
         _facingRight = !_facingRight;
         transform.localScale =
             new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
     }
-
-    private void Attack()
-    {
-        if (Time.time - _savedAttackStartTime > _animator.GetCurrentAnimatorStateInfo(0).length / 2)
-        {
-            playerStats.currentState = PlayerStats.States.Walking;
-        }
-    }
-
-    
-
-    
 }
