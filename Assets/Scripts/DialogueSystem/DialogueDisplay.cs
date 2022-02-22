@@ -43,7 +43,7 @@ public class DialogueDisplay : MonoBehaviour
         foreach (var symbol in sentence)
         {
             sentenceText.text += symbol;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 

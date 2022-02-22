@@ -24,6 +24,8 @@ public class CharacterDisplay : MonoBehaviour
 
     public void Update()
     {
+        //TODO: make events to avoid calling this in Update
+        
         statsText[0].text = $"{stats.maxHp}";
         statsText[1].text = $"{stats.maxStamina}";
         statsText[2].text = stats.movementSpeed.ToString("0.0");

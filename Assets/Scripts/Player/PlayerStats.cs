@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public enum States
-    {
-        Idle,
-        Walking,
-        Attacking
-    }
 
     public float maxHpWithoutBuffs = 100;
     public float maxHp = 100;
@@ -30,7 +24,6 @@ public class PlayerStats : MonoBehaviour
     public float experience = 0;
     public int currentLevel = 1;
     
-    public States currentState;
     public Bar healthBar;
     public Bar staminaBar;
     public PlayerInventory inventory;
@@ -53,12 +46,7 @@ public class PlayerStats : MonoBehaviour
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
         inventory.inventory.OnChange -= UpdateInventoryBuffs;
     }
-
-    private void LateUpdate()
-    {
-        healthBar.SetValueOnBar(hp);
-        staminaBar.SetValueOnBar(stamina);
-    }
+    
     public void ChangeHpValue(float changeValue)
     {
         if (hp + changeValue < 0)
@@ -70,6 +58,7 @@ public class PlayerStats : MonoBehaviour
             hp = maxHp;
         }
         else hp += changeValue;
+        healthBar.SetValueOnBar(hp);
     }
 
     public void ChangeStaminaValue(float changeValue)
@@ -83,6 +72,7 @@ public class PlayerStats : MonoBehaviour
             stamina = maxStamina;
         }
         else stamina += changeValue;
+        staminaBar.SetValueOnBar(stamina);
     }
 
     public void UpdateInventoryBuffs()

@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5772022334021392535, guid: 1f676331b83703943973274bdf226931, type: 3}
+      propertyPath: m_Text
+      value: Next
+      objectReference: {fileID: 0}
     - target: {fileID: 5772022334238003259, guid: 1f676331b83703943973274bdf226931, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
