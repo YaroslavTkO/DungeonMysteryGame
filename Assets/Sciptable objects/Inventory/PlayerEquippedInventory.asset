@@ -27,6 +27,6 @@ MonoBehaviour:
   - typeOfSlot: 3
     item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
     amount: 0
-  - typeOfSlot: 4
+  - typeOfSlot: 5
     item: {fileID: 11400000, guid: 5d3749a13957cc34da89fafbf10ea037, type: 2}
     amount: 0
