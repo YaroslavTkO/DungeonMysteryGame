@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public EnemyState CurrentState;
     public Animator animator;
     public GameObject player;
+    public Bar healthBar;
+
 
     public delegate void AttackPlayer(Enemy enemy);
 
@@ -27,6 +29,8 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
+        healthBar.SetMaxValueOnBar(hp);
+        facingRight = true;
         CurrentState = new EnemyIdle(this);
     }
     void Update()
@@ -37,6 +41,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hp -= damage;
+        healthBar.SetValueOnBar(hp);
         if (hp <= 0)
             Destroy(gameObject);
     }
