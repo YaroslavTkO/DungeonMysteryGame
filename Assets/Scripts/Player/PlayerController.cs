@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        _rigidbody2D.AddForce(Vector2.zero);
         currentState = currentState.Update();
     }
     private void FixedUpdate()
