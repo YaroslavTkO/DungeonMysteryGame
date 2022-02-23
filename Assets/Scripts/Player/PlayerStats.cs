@@ -20,6 +20,12 @@ public class PlayerStats : MonoBehaviour
     
     public float damageWithoutBuffs;
     public float damage = 1.0f;
+    public Transform attackPoint;
+    public float attackRange;
+    public LayerMask enemyLayers;
+
+    public float invincibilityTime = 1;
+    public float savedStartInvincibilityTime;
     
     public float experience = 0;
     public int currentLevel = 1;
@@ -30,6 +36,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        Enemy.Attacked += TakeDamage;
         healthBar.SetMaxValueOnBar(hp);
         staminaBar.SetMaxValueOnBar(stamina);
     }
@@ -139,4 +146,16 @@ public class PlayerStats : MonoBehaviour
     {
         experience += amount;
     }
+
+    public void TakeDamage(Enemy enemy)
+    {
+        if (Time.time - savedStartInvincibilityTime > invincibilityTime)
+        {
+            ChangeHpValue(-enemy.damage);
+            savedStartInvincibilityTime = Time.time;
+        }
+
+
+    }
+    
 }

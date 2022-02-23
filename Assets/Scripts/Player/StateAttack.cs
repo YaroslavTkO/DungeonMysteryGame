@@ -10,6 +10,12 @@ public class StateAttack : State
         Controller.playerStats.ChangeStaminaValue(-10);
         Controller._animator.SetTrigger("Attack");
         _savedAttackStartTime = Time.time;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(controller.playerStats.attackPoint.position,
+            controller.playerStats.attackRange, controller.playerStats.enemyLayers);
+        foreach (var enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(controller.playerStats.damage);
+        }
     }
 
     public override State Update()
