@@ -9,7 +9,7 @@ public class WalkingState : State
     }
     public override State Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && Controller.playerStats.stamina >= 20)
+        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) ) && Controller.playerStats.stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         Controller.playerStats.ChangeStaminaValue(-0.01f);
         _direction = HandleInput();
@@ -18,7 +18,7 @@ public class WalkingState : State
 
     public override Vector2 HandleInput()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 input = new Vector2(Controller.joystick.Horizontal + Input.GetAxisRaw("Horizontal"),Controller.joystick.Vertical + Input.GetAxisRaw("Vertical"));
         if (Controller._facingRight && input.x < 0)
         {
             Controller.Flip();

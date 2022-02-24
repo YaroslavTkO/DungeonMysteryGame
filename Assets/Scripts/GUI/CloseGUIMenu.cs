@@ -6,8 +6,8 @@ public class CloseGUIMenu : MonoBehaviour
 {
     public GameObject objToClose;
 
-    public void Close()
+    public void Close(bool open)
     {
-        objToClose.SetActive(false);
+        objToClose.SetActive(open);
     }
 }
