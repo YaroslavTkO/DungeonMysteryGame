@@ -304,7 +304,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
+<<<<<<< HEAD
+  hp: 30
+=======
   hp: 15
+>>>>>>> 8385615f0b03c467d530f7456e6d8736cf4f0923
   damage: 5
   movementSpeed: 1
   runningMovementSpeed: 2
