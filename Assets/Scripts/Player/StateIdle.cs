@@ -6,7 +6,7 @@ public class StateIdle : State
     {
         Controller.playerStats.ChangeStaminaValue(0.03f);
         _direction = HandleInput();
-        if (Input.GetKeyDown(KeyCode.Mouse1) && Controller.playerStats.stamina >= 20)
+        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) )&& Controller.playerStats.stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         return _direction != Vector2.zero ? ChangeState(new WalkingState(Controller)) : this;
     }
@@ -19,9 +19,9 @@ public class StateIdle : State
 
     public override Vector2 HandleInput()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 input = new Vector2( Controller.joystick.Horizontal + Input.GetAxisRaw("Horizontal"),Controller.joystick.Vertical + Input.GetAxisRaw("Vertical"));
 
-        return input;
+        return input.normalized;
     }
 
     public override State ChangeState(State state)
