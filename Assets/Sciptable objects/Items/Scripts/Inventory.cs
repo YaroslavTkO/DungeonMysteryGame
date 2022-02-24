@@ -44,7 +44,13 @@ public class Inventory : ScriptableObject
 
     public void SwapItems(InventorySlot slot1, InventorySlot slot2)
     {
-        if (slot1.CanPlaceInSlot(slot2.item) &&
+        if (slot1.item.id == slot2.item.id && slot1.item.isStakable)
+        {
+            slot1.ChangeQuantity(slot2.amount, database);
+            slot2.ClearSlot(database);
+            OnChange?.Invoke();
+        }
+        else if (slot1.CanPlaceInSlot(slot2.item) &&
             (slot1.item.id == 0 || slot2.CanPlaceInSlot(slot1.item)))
         {
             InventorySlot temp = new InventorySlot(slot2.item, slot2.amount);

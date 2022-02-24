@@ -16,6 +16,12 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     public GameObject player;
     public Bar healthBar;
+    public float SavedTime;
+
+
+    //ahead  0
+    //upDown 1
+    public bool[] wallCollisions = new bool[2];
 
 
     public delegate void AttackPlayer(Enemy enemy);
@@ -27,12 +33,17 @@ public class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     void Start()
     {
+        wallCollisions = new bool[2];
+        for (int i = 0; i < wallCollisions.Length; i++)
+            wallCollisions[i] = false;
         healthBar.SetMaxValueOnBar(hp);
         facingRight = true;
         CurrentState = new EnemyIdle(this);
     }
+
     void Update()
     {
         CurrentState.Update();
