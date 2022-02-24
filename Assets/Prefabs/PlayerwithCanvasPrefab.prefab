@@ -204,6 +204,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567495569236654463}
     m_Modifications:
+    - target: {fileID: 3032994573229192967, guid: cc456d13bb966824f94f9d8d847cb4bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032994573229192967, guid: cc456d13bb966824f94f9d8d847cb4bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032994573229192967, guid: cc456d13bb966824f94f9d8d847cb4bd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032994573229192967, guid: cc456d13bb966824f94f9d8d847cb4bd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 114.21
+      objectReference: {fileID: 0}
     - target: {fileID: 5840741043670453634, guid: cc456d13bb966824f94f9d8d847cb4bd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
