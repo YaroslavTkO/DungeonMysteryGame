@@ -4,7 +4,7 @@ public class StateIdle : State
 {
     public override State Update()
     {
-        Controller.playerStats.ChangeStaminaValue(0.03f);
+        Controller.playerStats.ChangeStaminaValue(0.1f);
         _direction = HandleInput();
         if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) )&& Controller.playerStats.stamina >= 20)
             return ChangeState(new StateAttack(Controller));

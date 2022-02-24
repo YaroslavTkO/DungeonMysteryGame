@@ -11,7 +11,7 @@ public class WalkingState : State
     {
         if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) ) && Controller.playerStats.stamina >= 20)
             return ChangeState(new StateAttack(Controller));
-        Controller.playerStats.ChangeStaminaValue(-0.01f);
+        Controller.playerStats.ChangeStaminaValue(-0.04f);
         _direction = HandleInput();
         return _direction == Vector2.zero ? ChangeState(new StateIdle(Controller)) : this;
     }
