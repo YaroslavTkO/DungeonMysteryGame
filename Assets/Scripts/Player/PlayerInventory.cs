@@ -8,7 +8,6 @@ public class PlayerInventory : MonoBehaviour
     public Inventory inventory;
     public Inventory equippedInventory;
     public Inventory foodInventory;
-    public GameObject inventoryGUI;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -22,10 +21,6 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            inventoryGUI.SetActive(true);
-        }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
