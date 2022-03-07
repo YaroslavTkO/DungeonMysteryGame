@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloseGUIMenu : MonoBehaviour
+public class ToggleActiveState : MonoBehaviour
 {
     public GameObject objToClose;
 
-    public void Close(bool open)
+    public void SetActive(bool open)
     {
         objToClose.SetActive(open);
     }

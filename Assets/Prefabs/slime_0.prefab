@@ -529,6 +529,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   player: {fileID: 0}
   healthBar: {fileID: 660600109999820040}
+  SavedTime: 0
+  killedMoney: 40
+  killedExp: 200
   wallCollisions: 
 --- !u!50 &660600110665695482
 Rigidbody2D:

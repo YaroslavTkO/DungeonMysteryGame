@@ -38,7 +38,7 @@ public class EnemyChase : EnemyState
                 Flip();
         }
 
-        if (Time.time - Enemy.SavedTime > 0.5)
+        if (Time.time - Enemy.SavedTime > 0.2)
         {
             Enemy.wallCollisions[0] = false;
             Enemy.wallCollisions[1] = false;

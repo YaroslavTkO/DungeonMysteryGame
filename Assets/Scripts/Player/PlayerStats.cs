@@ -29,7 +29,9 @@ public class PlayerStats : MonoBehaviour
     
     public float experience = 0;
     public int currentLevel = 1;
-    
+
+    public int money = 0;
+
     public Bar healthBar;
     public Bar staminaBar;
     public PlayerInventory inventory;
@@ -37,6 +39,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         Enemy.Attacked += TakeDamage;
+        Enemy.Killed += KilledEnemy;
         healthBar.SetMaxValueOnBar(hp);
         staminaBar.SetMaxValueOnBar(stamina);
     }
@@ -52,8 +55,17 @@ public class PlayerStats : MonoBehaviour
     {
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
         inventory.inventory.OnChange -= UpdateInventoryBuffs;
+        Enemy.Attacked -= TakeDamage;
+        Enemy.Killed -= KilledEnemy;
     }
-    
+
+    public bool ChangeMoney(int amount)
+    {
+        if (money + amount < 0)
+            return false;
+        money += amount;
+        return true;
+    }
     public void ChangeHpValue(float changeValue)
     {
         if (hp + changeValue < 0)
@@ -156,6 +168,12 @@ public class PlayerStats : MonoBehaviour
         }
 
 
+    }
+
+    public void KilledEnemy(int money, int exp)
+    {
+        ChangeMoney(money);
+        AddExperience(exp);
     }
     
 }
