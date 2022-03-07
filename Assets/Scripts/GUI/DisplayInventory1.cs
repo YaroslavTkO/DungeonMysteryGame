@@ -125,9 +125,7 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
-        if (DisplayedItems.ContainsKey(obj))
-            descriptionField.text = DisplayedItems[obj].item.description;
-        else descriptionField.text = "";
+        descriptionField.text = DisplayedItems.ContainsKey(obj)? DisplayedItems[obj].item.description:"";
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)

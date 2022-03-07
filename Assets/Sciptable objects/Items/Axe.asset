@@ -16,7 +16,10 @@ MonoBehaviour:
   itemSprite: {fileID: 7586878660721680135, guid: 38aa580623a25c74bb878227d751830b, type: 3}
   type: 4
   isStakable: 0
-  boosts: []
+  boosts:
+  - boostType: 5
+    value: 5
+  price: 20
   description: 'Simple axe.
 
     Perfect for killing monsters'
