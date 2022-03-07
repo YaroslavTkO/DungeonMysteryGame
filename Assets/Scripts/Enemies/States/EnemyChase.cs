@@ -21,7 +21,6 @@ public class EnemyChase : EnemyState
                 Flip();
             Enemy.transform.Translate(vector * Enemy.movementSpeed * Time.deltaTime);
         }
-
         if (Enemy.wallCollisions[1])
         {
             Enemy.transform.Translate(
@@ -39,7 +38,7 @@ public class EnemyChase : EnemyState
                 Flip();
         }
 
-        if (Time.time - Enemy.SavedTime > 0.8)
+        if (Time.time - Enemy.SavedTime > 0.5)
         {
             Enemy.wallCollisions[0] = false;
             Enemy.wallCollisions[1] = false;
