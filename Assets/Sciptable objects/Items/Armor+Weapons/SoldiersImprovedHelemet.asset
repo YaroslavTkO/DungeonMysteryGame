@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: ChainMailArmor
+  m_Name: SoldiersImprovedHelemet
   m_EditorClassIdentifier: 
-  id: 8
-  itemSprite: {fileID: 1105606570209640440, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 5
+  id: 0
+  itemSprite: {fileID: 6686695901687481553, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 3
   isStakable: 0
   boosts:
   - boostType: 1
-    value: 20
-  price: 100
-  description: 'Chain mail armor
+    value: 12
+  price: 0
+  description: 'Soldier improved helmet
 
-    Gives decent amount of defence,
+    High quality iron helmet.
 
-    and don''t
-    restricts your movement.
+    Used
+    among the best soldiers.
 
-'
+    Lightweighted, don''t slow your movement.'

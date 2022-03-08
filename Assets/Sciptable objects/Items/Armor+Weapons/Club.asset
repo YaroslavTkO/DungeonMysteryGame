@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: ChainMailArmor
+  m_Name: Club
   m_EditorClassIdentifier: 
-  id: 8
-  itemSprite: {fileID: 1105606570209640440, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 5
+  id: 13
+  itemSprite: {fileID: -3151664306139906903, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 4
   isStakable: 0
   boosts:
+  - boostType: 5
+    value: 8
   - boostType: 1
-    value: 20
-  price: 100
-  description: 'Chain mail armor
+    value: 10
+  - boostType: 4
+    value: -0.1
+  price: 0
+  description: 'Club
 
-    Gives decent amount of defence,
+    Turn your enemy into ashes with this weapon.
 
-    and don''t
-    restricts your movement.
-
-'
+    Club
+    have decent damage, boosts your defence, but slows you a little.'

@@ -10,21 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: ChainMailArmor
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  id: 8
-  itemSprite: {fileID: 1105606570209640440, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 5
+  id: 0
+  itemSprite: {fileID: 4974777230077354459, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 4
   isStakable: 0
   boosts:
-  - boostType: 1
-    value: 20
-  price: 100
-  description: 'Chain mail armor
-
-    Gives decent amount of defence,
-
-    and don''t
-    restricts your movement.
-
-'
+  - boostType: 5
+    value: 10
+  price: 180
+  description: "Sword\nThe most popular weapon.\nHave shown it's efficiency in \nnumerous
+    battles.\nHave decent damage."

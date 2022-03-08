@@ -10,21 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: ChainMailArmor
+  m_Name: Leather helmet
   m_EditorClassIdentifier: 
-  id: 8
-  itemSprite: {fileID: 1105606570209640440, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 5
+  id: 0
+  itemSprite: {fileID: -2780883980879780508, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 3
   isStakable: 0
   boosts:
-  - boostType: 1
+  - boostType: 0
     value: 20
-  price: 100
-  description: 'Chain mail armor
+  - boostType: 0
+    value: 0.1
+  price: 150
+  description: 'Leather helmet
 
-    Gives decent amount of defence,
-
-    and don''t
-    restricts your movement.
-
-'
+    Gives you energy and fastens you.'
