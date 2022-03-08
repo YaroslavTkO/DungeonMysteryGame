@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : BaseEnemy
 {
     public bool facingRight;
     public float hp;
-    public int damage;
     public float movementSpeed;
     public float runningMovementSpeed;
     public float timeToChangeDirection;
@@ -28,9 +27,9 @@ public class Enemy : MonoBehaviour
     public delegate void IsKilled(int money, int exp);
 
     public static event IsKilled Killed;
-    public delegate void AttackPlayer(Enemy enemy);
+  //  public delegate void AttackPlayer(Enemy enemy);
 
-    public static event AttackPlayer Attacked;
+  //  public static event AttackPlayer Attacked;
 
 
     private void Awake()
@@ -76,9 +75,9 @@ public class Enemy : MonoBehaviour
         CurrentState = CurrentState.ChangeState(new EnemyIdle(this));
     }
 
-    public void OnTriggerStay2D(Collider2D other)
+  /*  public void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
             Attacked?.Invoke(this);
-    }
+    }*/
 }

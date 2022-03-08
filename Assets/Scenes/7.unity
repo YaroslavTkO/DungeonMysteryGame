@@ -17982,6 +17982,7 @@ GameObject:
   - component: {fileID: 564107669}
   - component: {fileID: 564107668}
   - component: {fileID: 564107667}
+  - component: {fileID: 564107673}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (10)
   m_TagString: Untagged
@@ -18019,20 +18020,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 564107666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &564107669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18143,6 +18134,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564107673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564107666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &565561507
 GameObject:
   m_ObjectHideFlags: 0
@@ -18212,8 +18216,8 @@ GameObject:
   - component: {fileID: 584652569}
   - component: {fileID: 584652568}
   - component: {fileID: 584652567}
-  - component: {fileID: 584652566}
   - component: {fileID: 584652565}
+  - component: {fileID: 584652566}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (4)
   m_TagString: Untagged
@@ -18251,20 +18255,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 584652564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &584652567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18580,8 +18574,8 @@ GameObject:
   - component: {fileID: 677730568}
   - component: {fileID: 677730567}
   - component: {fileID: 677730566}
-  - component: {fileID: 677730565}
   - component: {fileID: 677730564}
+  - component: {fileID: 677730570}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (5)
   m_TagString: Untagged
@@ -18610,29 +18604,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &677730565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677730563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
-  damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &677730566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18743,6 +18714,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677730570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677730563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &678924948
 GameObject:
   m_ObjectHideFlags: 0
@@ -19232,6 +19216,7 @@ GameObject:
   - component: {fileID: 879767312}
   - component: {fileID: 879767313}
   - component: {fileID: 879767314}
+  - component: {fileID: 879767315}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310
   m_TagString: Untagged
@@ -19358,20 +19343,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 879767308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!50 &879767314
 Rigidbody2D:
   serializedVersion: 4
@@ -19393,6 +19368,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &879767315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879767308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &901138855
 GameObject:
   m_ObjectHideFlags: 0
@@ -19462,8 +19450,8 @@ GameObject:
   - component: {fileID: 911050973}
   - component: {fileID: 911050972}
   - component: {fileID: 911050971}
-  - component: {fileID: 911050970}
   - component: {fileID: 911050969}
+  - component: {fileID: 911050970}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (9)
   m_TagString: Untagged
@@ -19501,20 +19489,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 911050968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &911050971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19637,8 +19615,8 @@ GameObject:
   - component: {fileID: 918487852}
   - component: {fileID: 918487851}
   - component: {fileID: 918487850}
-  - component: {fileID: 918487849}
   - component: {fileID: 918487848}
+  - component: {fileID: 918487854}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (8)
   m_TagString: Untagged
@@ -19667,29 +19645,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &918487849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918487847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
-  damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &918487850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19800,6 +19755,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918487854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918487847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &918898242
 GameObject:
   m_ObjectHideFlags: 0
@@ -20168,8 +20136,8 @@ GameObject:
   - component: {fileID: 972252567}
   - component: {fileID: 972252566}
   - component: {fileID: 972252565}
-  - component: {fileID: 972252564}
   - component: {fileID: 972252563}
+  - component: {fileID: 972252564}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (3)
   m_TagString: Untagged
@@ -20207,20 +20175,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 972252562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &972252565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22326,8 +22284,8 @@ GameObject:
   - component: {fileID: 1475046059}
   - component: {fileID: 1475046058}
   - component: {fileID: 1475046057}
-  - component: {fileID: 1475046056}
   - component: {fileID: 1475046055}
+  - component: {fileID: 1475046056}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (7)
   m_TagString: Untagged
@@ -22365,20 +22323,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475046054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &1475046057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23257,8 +23205,8 @@ GameObject:
   - component: {fileID: 1859002845}
   - component: {fileID: 1859002844}
   - component: {fileID: 1859002843}
-  - component: {fileID: 1859002842}
   - component: {fileID: 1859002841}
+  - component: {fileID: 1859002842}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (2)
   m_TagString: Untagged
@@ -23296,20 +23244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859002840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
   damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &1859002843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28314,8 +28252,8 @@ GameObject:
   - component: {fileID: 2020997199}
   - component: {fileID: 2020997198}
   - component: {fileID: 2020997197}
-  - component: {fileID: 2020997196}
   - component: {fileID: 2020997195}
+  - component: {fileID: 2020997201}
   m_Layer: 6
   m_Name: 0x72_DungeonTilesetII_v1.4_310 (6)
   m_TagString: Untagged
@@ -28344,29 +28282,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2020997196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020997194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 0
-  hp: 0
-  damage: 5
-  movementSpeed: 0
-  runningMovementSpeed: 0
-  timeToChangeDirection: 0
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  healthBar: {fileID: 0}
-  SavedTime: 0
-  wallCollisions: 0000
 --- !u!61 &2020997197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28477,6 +28392,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2020997201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020997194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &2022401070
 GameObject:
   m_ObjectHideFlags: 0

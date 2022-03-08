@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        Enemy.Attacked += TakeDamage;
+        BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
         healthBar.SetMaxValueOnBar(hp);
         staminaBar.SetMaxValueOnBar(stamina);
@@ -55,7 +55,7 @@ public class PlayerStats : MonoBehaviour
     {
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
         inventory.inventory.OnChange -= UpdateInventoryBuffs;
-        Enemy.Attacked -= TakeDamage;
+        BaseEnemy.Attacked -= TakeDamage;
         Enemy.Killed -= KilledEnemy;
     }
 
@@ -159,7 +159,7 @@ public class PlayerStats : MonoBehaviour
         experience += amount;
     }
 
-    public void TakeDamage(Enemy enemy)
+    public void TakeDamage(BaseEnemy enemy)
     {
         if (Time.time - savedStartInvincibilityTime > invincibilityTime)
         {
