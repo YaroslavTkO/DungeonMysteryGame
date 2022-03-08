@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  id: 1
+  itemSprite: {fileID: 7586878660721680135, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 4
+  isStakable: 0
+  boosts:
+  - boostType: 5
+    value: 3
+  - boostType: 0
+    value: 5
+  price: 50
+  description: 'Axe
+
+    It''s Lumberjack tool, but can
+
+    be used to cut off enemy
+    heads.
+
+    Gives you a small energy boost.
+
+'
