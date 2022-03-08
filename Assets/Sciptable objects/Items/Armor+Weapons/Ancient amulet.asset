@@ -10,18 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: Leather helmet
+  m_Name: Ancient amulet
   m_EditorClassIdentifier: 
-  id: 16
-  itemSprite: {fileID: -2780883980879780508, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 3
+  id: 23
+  itemSprite: {fileID: -4493048285074470258, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 6
   isStakable: 0
   boosts:
   - boostType: 0
-    value: 20
+    value: 15
+  - boostType: 1
+    value: 15
   - boostType: 4
-    value: 0.1
-  price: 150
-  description: 'Leather helmet
+    value: 0.2
+  price: 0
+  description: 'Ancient gold amulet
 
-    Gives you energy and fastens you.'
+    No one knows where it comes from but
+
+    rumours
+    say it was blessed by gods.
+
+    Gods power flows in it.
+
+'
