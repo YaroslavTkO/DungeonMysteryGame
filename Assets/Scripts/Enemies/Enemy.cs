@@ -17,13 +17,17 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public Bar healthBar;
     public float SavedTime;
-
-
+    public int killedMoney;
+    public int killedExp;
+    
     //ahead  0
     //upDown 1
     public bool[] wallCollisions = new bool[2];
 
 
+    public delegate void IsKilled(int money, int exp);
+
+    public static event IsKilled Killed;
     public delegate void AttackPlayer(Enemy enemy);
 
     public static event AttackPlayer Attacked;
@@ -54,7 +58,10 @@ public class Enemy : MonoBehaviour
         hp -= damage;
         healthBar.SetValueOnBar(hp);
         if (hp <= 0)
+        {
+            Killed?.Invoke(killedMoney, killedExp);
             Destroy(gameObject);
+        }
     }
 
     public void OnChildTriggerEnter(GameObject _player)

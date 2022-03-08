@@ -17,4 +17,5 @@ MonoBehaviour:
   type: 4
   isStakable: 1
   boosts: []
+  price: 5
   description: 

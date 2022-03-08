@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public ItemType type;
     public bool isStakable;
     public List<ItemBoost> boosts;
+    public int price;
     [TextArea(15,20)]
     public string description;
     

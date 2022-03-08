@@ -88,7 +88,7 @@ public class DisplayInventory1 : MonoBehaviour
     {
         var mouseObj = new GameObject();
         var rectTransform = mouseObj.AddComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(45, 45);
+        rectTransform.sizeDelta = new Vector2(80, 80);
         mouseObj.transform.SetParent(transform.parent);
         if (DisplayedItems[obj].item.id > 0)
         {
@@ -125,9 +125,7 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
-        if (DisplayedItems.ContainsKey(obj))
-            descriptionField.text = DisplayedItems[obj].item.description;
-        else descriptionField.text = "";
+        descriptionField.text = DisplayedItems.ContainsKey(obj)? DisplayedItems[obj].item.description:"";
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
