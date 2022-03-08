@@ -10,15 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: Food
+  m_Name: Thief hood
   m_EditorClassIdentifier: 
-  id: 3
-  itemSprite: {fileID: 21300000, guid: db005d11213e5da47b9769c2e6c56eee, type: 3}
-  type: 2
-  isStakable: 1
+  id: 4
+  itemSprite: {fileID: 4195300340500613805, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 3
+  isStakable: 0
   boosts:
-  - boostType: 3
-    value: 50
-  price: 10
-  description: "\u0412\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0454 \u0441\u0442\u0430\u043C\u0456\u043D\u0443
-    \u043F\u0440\u0438 \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u0430\u043D\u043D\u0456"
+  - boostType: 0
+    value: 10
+  - boostType: 4
+    value: 0.4
+  price: 5
+  description: 'Thief Hood
+
+    Common piece of clothes among thiefs.
+
+    It is
+    said that those who wear it can
+
+    move faster and have more energy'

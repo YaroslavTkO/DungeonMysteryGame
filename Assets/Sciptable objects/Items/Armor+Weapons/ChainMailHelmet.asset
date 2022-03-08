@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: Pickaxe
+  m_Name: ChainMailHelmet
   m_EditorClassIdentifier: 
-  id: 2
-  itemSprite: {fileID: 21300000, guid: 45cfe68fb47a8514f96477d0fb432286, type: 3}
-  type: 4
-  isStakable: 1
-  boosts: []
-  price: 5
-  description: 
+  id: 9
+  itemSprite: {fileID: -7051870695796070469, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 3
+  isStakable: 0
+  boosts:
+  - boostType: 1
+    value: 10
+  price: 60
+  description: 'Chain mail helmet
+
+    Gives decent amount of defence.
+
+'
