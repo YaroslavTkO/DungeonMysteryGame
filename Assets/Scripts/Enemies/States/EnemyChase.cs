@@ -15,10 +15,6 @@ public class EnemyChase : EnemyState
         if (Enemy.wallCollisions[0])
         {
             var vector = new Vector2(Enemy.transform.position.x < Enemy.player.transform.position.x ? -1 : 1, 0);
-            if (vector == Vector2.left && Enemy.facingRight)
-                Flip();
-            else if (vector == Vector2.right && !Enemy.facingRight)
-                Flip();
             Enemy.transform.Translate(vector * Enemy.movementSpeed * Time.deltaTime);
         }
         if (Enemy.wallCollisions[1])
