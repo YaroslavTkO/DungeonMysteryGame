@@ -11,6 +11,9 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         if (PlayerPrefs.GetString("lastLevel").Equals("level1"))
+        {
             player.transform.position = spawnPos.position;
+            PlayerPrefs.DeleteKey("lastLevel");
+        }
     }
 }
