@@ -19,23 +19,18 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Save()
     {
+        foodInventory.Save();
+        inventory.Save();
+        equippedInventory.Save();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            foodInventory.Save();
-            inventory.Save();
-            equippedInventory.Save();
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            foodInventory.Load();
-            inventory.Load();
-            equippedInventory.Load();
-        }
+    public void Load()
+    {
+        foodInventory.Load();
+        inventory.Load();
+        equippedInventory.Load();
     }
 
     private void OnApplicationQuit()

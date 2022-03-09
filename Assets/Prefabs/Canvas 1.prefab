@@ -1097,6 +1097,7 @@ MonoBehaviour:
   - {fileID: 6516423437095529745}
   experienceBar: {fileID: 6516423437106457111}
   experienceText: {fileID: 6516423436999101807}
+  moneyText: {fileID: 0}
 --- !u!1 &6516423436577041789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Description of Object
+  m_Text: 
 --- !u!1 &6516423436596668331
 GameObject:
   m_ObjectHideFlags: 0

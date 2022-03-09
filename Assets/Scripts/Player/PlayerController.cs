@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{ 
+{
     public Joystick joystick;
     public PlayerStats playerStats;
     public Animator _animator;
@@ -19,15 +19,22 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         currentState = new StateIdle(this);
     }
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X))
+            playerStats.Save();
+        else if (Input.GetKeyDown(KeyCode.Z))
+            playerStats.Load();
         _rigidbody2D.AddForce(Vector2.zero);
         currentState = currentState.Update();
     }
+
     private void FixedUpdate()
     {
         _rigidbody2D.MovePosition(_rigidbody2D.position + currentState.FixedUpdate());
     }
+
     public void Flip()
     {
         _facingRight = !_facingRight;

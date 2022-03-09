@@ -5,17 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class loadscene : MonoBehaviour
 {
-
-    
-    
-
-   
-
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag=="house")
-        SceneManager.LoadScene(1);
+        if (coll.gameObject.CompareTag("house"))
+            SceneManager.LoadScene(1);
     }
 }
-
-

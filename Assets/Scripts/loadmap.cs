@@ -10,7 +10,7 @@ public class loadmap : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "map")
+        if (coll.gameObject.CompareTag("map"))
             SceneManager.LoadScene(0);
     }
 }

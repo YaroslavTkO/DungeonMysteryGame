@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    private string saveFileName = "playerStats.aaa";
 
     public float maxHpWithoutBuffs = 100;
     public float maxHp = 100;
@@ -174,6 +177,36 @@ public class PlayerStats : MonoBehaviour
     {
         ChangeMoney(money);
         AddExperience(exp);
+    }
+    
+    public void Save()
+    {
+        var saveData = JsonUtility.ToJson(this, true);
+        var formatter = new BinaryFormatter();
+        var file = File.Create($"{Application.persistentDataPath}/{saveFileName}");
+        formatter.Serialize(file, saveData);
+        file.Close();
+        inventory.Save();
+    }
+
+    public void Load()
+    {
+        var path = Application.persistentDataPath + "/" + saveFileName;
+        if (File.Exists(path))
+        {
+            var formatter = new BinaryFormatter();
+            var file = File.Open($"{Application.persistentDataPath}/{saveFileName}", FileMode.Open);
+            JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
+            file.Close();
+            inventory.Load();
+            
+            
+            staminaBar.SetOnlyMaxValueOnBar(maxStamina);
+            healthBar.SetOnlyMaxValueOnBar(maxHp);
+            healthBar.SetValueOnBar(hp);
+            staminaBar.SetValueOnBar(stamina);
+            
+        }
     }
     
 }
