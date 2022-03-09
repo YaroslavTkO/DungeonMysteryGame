@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,15 +8,17 @@ public class Database : ScriptableObject, ISerializationCallbackReceiver
 {
     public Item[] items;
 
+    private void OnEnable()
+    {
+        for (int i = 0; i < items.Length; i++)
+            items[i].id = i;
+    }
     public void OnBeforeSerialize()
     {
-        
     }
     public void OnAfterDeserialize()
     {
         for (int i = 0; i < items.Length; i++)
-        {
             items[i].id = i;
-        }
     }
 }
