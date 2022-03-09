@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
-  m_Name: Leather helmet
+  m_Name: Amulet of life
   m_EditorClassIdentifier: 
-  id: 16
-  itemSprite: {fileID: -2780883980879780508, guid: 38aa580623a25c74bb878227d751830b, type: 3}
-  type: 3
+  id: 0
+  itemSprite: {fileID: -5016349117760501212, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 6
   isStakable: 0
   boosts:
-  - boostType: 0
-    value: 20
+  - boostType: 1
+    value: 15
   - boostType: 4
     value: 0.1
-  price: 150
-  description: 'Leather helmet
-
-    Gives you energy and fastens you.'
+  price: 100
+  description: "Amulet of life\nThis amulet was made by master with strong \ndesire
+    to live. Gives health to it's wearer and \nboosts speed."

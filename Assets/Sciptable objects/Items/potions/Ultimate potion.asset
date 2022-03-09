@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
+  m_Name: Ultimate potion
+  m_EditorClassIdentifier: 
+  id: 0
+  itemSprite: {fileID: -7155618650392127368, guid: 38aa580623a25c74bb878227d751830b, type: 3}
+  type: 2
+  isStakable: 0
+  boosts:
+  - boostType: 3
+    value: 200
+  - boostType: 2
+    value: 200
+  price: 400
+  description: 'Ultimate potion
+
+    The recipe for this potion was lost long ago.
+
+    All
+    history of it''s creation is forgotten.
+
+    It can only be found in ancient
+    ruins.
+
+    Great power flows in it. The source of this power
+
+    is unknown.
+
+    Restore
+    enourmous amount of health and stamina.
+
+'

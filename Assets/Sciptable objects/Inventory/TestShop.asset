@@ -16,11 +16,32 @@ MonoBehaviour:
   saveFileName: firstshop.inv
   slots:
   - typeOfSlot: 0
-    item: {fileID: 11400000, guid: 9f682d1e330f141418f947e6f878a322, type: 2}
+    item: {fileID: 11400000, guid: ba6cd294155685b4ebe4461658ae9f3c, type: 2}
     amount: 1
   - typeOfSlot: 0
     item: {fileID: 11400000, guid: 7e9b4e4496fef6148b67b5a8806dd02c, type: 2}
     amount: 1
   - typeOfSlot: 0
     item: {fileID: 11400000, guid: 9b3bf71476c80774091c7e626f54b079, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: 3b85f9122fdb5294ba7efcbce8824aa3, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: 75f1e50eaee41ea42967f72783d0afcb, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: cf7cbfeac94b92c46ad9bab8bdd26e87, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: 326ad683f1cf945439a649504fe97345, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: bca28cfd616da3144846c51af735a443, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: 73b2370c53f84b04d972991f3efb30d5, type: 2}
+    amount: 1
+  - typeOfSlot: 0
+    item: {fileID: 11400000, guid: ca2061616ae20574c8faac0aa5024404, type: 2}
     amount: 1
