@@ -18,15 +18,10 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         currentState = new StateIdle(this);
-       // playerStats.Load();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-            playerStats.Save();
-        else if (Input.GetKeyDown(KeyCode.Z))
-            playerStats.Load();
         _rigidbody2D.AddForce(Vector2.zero);
         currentState = currentState.Update();
     }

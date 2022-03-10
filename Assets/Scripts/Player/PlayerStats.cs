@@ -47,10 +47,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        attackPointCopy = attackPoint;
-        healthBarCopy = healthBar;
-        staminaBarCopy = staminaBar;
-        inventoryCopy = inventory;
+        
         Load();
 
         BaseEnemy.Attacked += TakeDamage;
@@ -205,6 +202,10 @@ public class PlayerStats : MonoBehaviour
 
     public void Load()
     {
+        attackPointCopy = attackPoint;
+        healthBarCopy = healthBar;
+        staminaBarCopy = staminaBar;
+        inventoryCopy = inventory;
         var path = Application.persistentDataPath + "/" + saveFileName;
         if (File.Exists(path))
         {
