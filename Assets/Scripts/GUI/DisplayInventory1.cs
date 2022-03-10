@@ -23,11 +23,13 @@ public class DisplayInventory1 : MonoBehaviour
     {
         UpdateSlots();
         inventory.OnChange += UpdateSlots;
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
     {
         inventory.OnChange -= UpdateSlots;
+        Time.timeScale = 1;
     }
 
     void Update()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -34,17 +35,29 @@ public class PlayerStats : MonoBehaviour
     public int currentLevel = 1;
 
     public int money = 0;
-
-    public Bar healthBar;
-    public Bar staminaBar;
+    
+    [SerializeField]private Bar healthBar;
+    [SerializeField]private Bar staminaBar;
     public PlayerInventory inventory;
+
+    private Transform attackPointCopy;
+    private Bar healthBarCopy;
+    private Bar staminaBarCopy;
+    private PlayerInventory inventoryCopy;
 
     private void Start()
     {
+        attackPointCopy = attackPoint;
+        healthBarCopy = healthBar;
+        staminaBarCopy = staminaBar;
+        inventoryCopy = inventory;
+        Load();
+
         BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
         healthBar.SetMaxValueOnBar(hp);
-        staminaBar.SetMaxValueOnBar(stamina);
+        staminaBar.SetMaxValueOnBar(stamina); 
+        
     }
 
     private void OnEnable()
@@ -181,6 +194,7 @@ public class PlayerStats : MonoBehaviour
     
     public void Save()
     {
+        //string saveData = JsonConvert.SerializeObject(this, Formatting.None, jsSettings);
         var saveData = JsonUtility.ToJson(this, true);
         var formatter = new BinaryFormatter();
         var file = File.Create($"{Application.persistentDataPath}/{saveFileName}");
@@ -198,6 +212,10 @@ public class PlayerStats : MonoBehaviour
             var file = File.Open($"{Application.persistentDataPath}/{saveFileName}", FileMode.Open);
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
             file.Close();
+            attackPoint = attackPointCopy;
+            healthBar = healthBarCopy;
+            staminaBar = staminaBarCopy;
+            inventory = inventoryCopy;
             inventory.Load();
             
             
