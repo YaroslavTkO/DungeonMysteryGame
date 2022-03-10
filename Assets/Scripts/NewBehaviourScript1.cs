@@ -13,14 +13,14 @@ public class NewBehaviourScript1 : MonoBehaviour
     {
         levelUnLock = PlayerPrefs.GetInt("levels", 1);
 
-        for (int i = 0; i < buttons.Length; i++)
+        for (int i = 1; i < buttons.Length; i++)
             buttons[i].interactable = false;
 
 
         for (int i = 0; i < levelUnLock; i++)
             buttons[i].interactable = true;
     }
-
+    
     public void loadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
