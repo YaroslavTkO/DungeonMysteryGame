@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         currentState = new StateIdle(this);
+       // playerStats.Load();
     }
 
     void Update()
