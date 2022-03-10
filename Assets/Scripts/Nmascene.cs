@@ -14,6 +14,13 @@ public class Nmascene : MonoBehaviour
         {
             PlayerPrefs.SetString("lastLevel", SceneManager.GetActiveScene().name);
             
+            var saveStats = coll.gameObject.GetComponent<PlayerStats>();
+            if (saveStats)
+            {
+                saveStats.Save();
+                PlayerPrefs.SetString("savedLevel", levelIndex);
+            }
+
             SceneManager.LoadScene(levelIndex);
         }
     }

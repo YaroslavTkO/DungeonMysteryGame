@@ -41,6 +41,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        Load();
+        
         BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
         healthBar.SetMaxValueOnBar(hp);
