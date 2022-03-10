@@ -102,6 +102,7 @@ public class Inventory : ScriptableObject
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
             file.Close();
         }
+        else ClearInventory();
 
         OnChange?.Invoke();
     }
