@@ -644,6 +644,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 209946644544884144, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 4471251192393956098, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 2757445573121528047, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
 --- !u!1 &254878083
 GameObject:
@@ -12551,6 +12553,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 209946644544884144, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 4471251192393956098, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 2757445573121528047, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
 --- !u!1 &780415478
 GameObject:
@@ -26983,6 +26987,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 209946644544884144, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 4471251192393956098, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 2757445573121528047, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
 --- !u!1 &1244788595 stripped
 GameObject:
@@ -27400,6 +27406,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 209946644544884144, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 4471251192393956098, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 2757445573121528047, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
 --- !u!1 &1470098341
 GameObject:
@@ -27577,7 +27585,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4471251192393956098, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
+    - {fileID: 209946644544884144, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a057178eb028e94fb93bf39262ea3e8, type: 3}
 --- !u!1 &1541773640
 GameObject:
