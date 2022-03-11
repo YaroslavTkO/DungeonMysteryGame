@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class nextlevel : MonoBehaviour
+public class FinishLevel : MonoBehaviour
 {
+    public int level;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             UnLockLevel();
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene("level1");
         }
     }
-
-
     public void UnLockLevel()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentLevel >= PlayerPrefs.GetInt("levels"))
-            PlayerPrefs.SetInt("levels", currentLevel + 1);
+        if (level >= PlayerPrefs.GetInt("levels"))
+            PlayerPrefs.SetInt("levels", level + 1);
     }
 }
