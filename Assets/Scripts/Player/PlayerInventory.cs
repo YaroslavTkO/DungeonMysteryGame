@@ -28,6 +28,9 @@ public class PlayerInventory : MonoBehaviour
 
     public void Load()
     {
+        inventory.ClearInventory();
+        equippedInventory.ClearInventory();
+        foodInventory.ClearInventory();
         foodInventory.Load();
         inventory.Load();
         equippedInventory.Load();
