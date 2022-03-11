@@ -18,6 +18,14 @@ public class LevelsMenu : MonoBehaviour
 
     public void LoadLevel(string levelName)
     {
+        PlayerPrefs.SetString("lastLevel", SceneManager.GetActiveScene().name);
+            
+        var saveStats = FindObjectOfType<PlayerStats>();
+        if (saveStats)
+        {
+            saveStats.Save();
+            PlayerPrefs.SetString("savedLevel", levelName);
+        }
         SceneManager.LoadScene(levelName);
     }
 

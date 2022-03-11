@@ -1412,6 +1412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseOnHub
       objectReference: {fileID: 0}
+    - target: {fileID: 3263425423016218440, guid: 84504dd5f0ce77441b6c128e7c42eefd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84504dd5f0ce77441b6c128e7c42eefd, type: 3}
 --- !u!1 &359849722
@@ -2814,7 +2818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35.657043, y: -34.95877}
+  m_AnchoredPosition: {x: -41.9, y: -44.643}
   m_SizeDelta: {x: 71.32141, y: 69.914}
   m_Pivot: {x: 0.4999997, y: 0.49999994}
 --- !u!114 &570888849
@@ -5806,7 +5810,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &859435302
 RectTransform:
@@ -7959,7 +7963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502732948644905101, guid: dc4260a590e36844a96257202faf37ef, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2502732949323149864, guid: dc4260a590e36844a96257202faf37ef, type: 3}
       propertyPath: slotsToPlaceObjects.Array.size
