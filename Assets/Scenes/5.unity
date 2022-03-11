@@ -10208,7 +10208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706659370729318880, guid: a350f8adb6750e24ca1968262d39d4cd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5706659370729318880, guid: a350f8adb6750e24ca1968262d39d4cd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10362,7 +10362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741734c5d72ecf24f97924e261c886b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 3
 --- !u!1 &1455202979
 GameObject:
   m_ObjectHideFlags: 0
@@ -28620,6 +28620,10 @@ PrefabInstance:
     - target: {fileID: 4742419019171909393, guid: c1305dad964e7064f9694561babf5b53, type: 3}
       propertyPath: m_Name
       value: PauseOnLevels
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742419019171909393, guid: c1305dad964e7064f9694561babf5b53, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4742419019171909405, guid: c1305dad964e7064f9694561babf5b53, type: 3}
       propertyPath: m_Pivot.x
