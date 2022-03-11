@@ -8,12 +8,16 @@ public class LevelsMenu : MonoBehaviour
 {
     int levelUnLock;
     public Button[] buttons;
+    public GameObject[] locks;
 
     void Start()
     {
         levelUnLock = PlayerPrefs.GetInt("levels", 1);
-        for (int i = 1; i < buttons.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
+        {
             buttons[i].interactable = i < levelUnLock;
+            locks[i].SetActive(!(i < levelUnLock));
+        }
     }
 
     public void LoadLevel(string levelName)
