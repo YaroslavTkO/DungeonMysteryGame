@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -12,7 +13,6 @@ public class Inventory : ScriptableObject
     public delegate void InventoryChange();
 
     public event InventoryChange OnChange;
-
     public bool AddItem(Item item)
     {
         if (item.isStakable)
@@ -94,16 +94,23 @@ public class Inventory : ScriptableObject
 
     public void Load()
     {
+        var copyDatabase = database;
         var path = Application.persistentDataPath + "/" + saveFileName;
         if (File.Exists(path))
         {
+            ClearInventory();
             var formatter = new BinaryFormatter();
             var file = File.Open($"{Application.persistentDataPath}/{saveFileName}", FileMode.Open);
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
             file.Close();
+            database = copyDatabase;
         }
-        else ClearInventory();
-
+        else
+        {
+            database = copyDatabase;
+            ClearInventory();
+        }
+        
         OnChange?.Invoke();
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class InventorySlot
         this.item = item;
         this.amount = amount;
     }
+
     public void ChangeQuantity(int amountToChange, Database database)
     {
         amount += amountToChange;
@@ -22,6 +24,7 @@ public class InventorySlot
             ClearSlot(database);
         }
     }
+
     public void ClearSlot(Database database)
     {
         item = database.items[0];
