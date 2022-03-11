@@ -661,7 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
 --- !u!212 &357809001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10064,6 +10063,7 @@ GameObject:
   - component: {fileID: 1308088387}
   - component: {fileID: 1308088389}
   - component: {fileID: 1308088386}
+  - component: {fileID: 1308088390}
   m_Layer: 0
   m_Name: Dungeon Tileset_27
   m_TagString: Untagged
@@ -10172,6 +10172,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1308088390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308088385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70737b564522dab4ababed81d321ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: {fileID: 1585406629}
@@ -10375,6 +10387,7 @@ GameObject:
   - component: {fileID: 1455202982}
   - component: {fileID: 1455202981}
   - component: {fileID: 1455202980}
+  - component: {fileID: 1455202984}
   m_Layer: 0
   m_Name: Dungeon Tileset_27 (3)
   m_TagString: Untagged
@@ -10420,7 +10433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 1764194277}
 --- !u!212 &1455202982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10486,6 +10498,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1455202984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455202979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70737b564522dab4ababed81d321ee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1764194277}
 --- !u!1 &1558767898
 GameObject:
   m_ObjectHideFlags: 0
@@ -10543,7 +10568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
 --- !u!212 &1558767901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10621,6 +10645,7 @@ GameObject:
   - component: {fileID: 1568360817}
   - component: {fileID: 1568360816}
   - component: {fileID: 1568360815}
+  - component: {fileID: 1568360819}
   m_Layer: 0
   m_Name: Dungeon Tileset_27 (6)
   m_TagString: Untagged
@@ -10666,7 +10691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 357808998}
 --- !u!212 &1568360817
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10732,6 +10756,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: -1, y: 0, z: 0}
+--- !u!114 &1568360819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568360814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70737b564522dab4ababed81d321ee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 357808998}
 --- !u!1 &1585406629
 GameObject:
   m_ObjectHideFlags: 0
@@ -10789,7 +10826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
 --- !u!212 &1585406632
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11095,15 +11131,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567495569236654463, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 567495569236654463, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.75
+      value: 51.6
       objectReference: {fileID: 0}
     - target: {fileID: 567495569236654463, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.53
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 567495569236654463, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28487,7 +28523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
 --- !u!212 &1764194280
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28723,6 +28758,7 @@ GameObject:
   - component: {fileID: 1932836904}
   - component: {fileID: 1932836903}
   - component: {fileID: 1932836902}
+  - component: {fileID: 1932836906}
   m_Layer: 0
   m_Name: Dungeon Tileset_27 (1)
   m_TagString: Untagged
@@ -28768,7 +28804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a0399aae490246a8f027fb42130c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 1558767898}
 --- !u!212 &1932836904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28834,6 +28869,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932836906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932836901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70737b564522dab4ababed81d321ee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1558767898}
 --- !u!1 &2029626739
 GameObject:
   m_ObjectHideFlags: 0
