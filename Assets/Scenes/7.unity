@@ -18008,7 +18008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &564107669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18243,7 +18243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &584652567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18711,7 +18711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!1 &678924948
 GameObject:
   m_ObjectHideFlags: 0
@@ -19329,7 +19329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!50 &879767314
 Rigidbody2D:
   serializedVersion: 4
@@ -19475,7 +19475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &911050971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19750,7 +19750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!1 &918898242
 GameObject:
   m_ObjectHideFlags: 0
@@ -20161,7 +20161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &972252565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22301,7 +22301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &1475046057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22953,7 +22953,7 @@ Transform:
   m_LocalScale: {x: 1.1016825, y: 1.1016825, z: 1.1016825}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1829060451
 GameObject:
@@ -23138,7 +23138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!61 &1859002843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28295,7 +28295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 5
 --- !u!1 &2022401070
 GameObject:
   m_ObjectHideFlags: 0
