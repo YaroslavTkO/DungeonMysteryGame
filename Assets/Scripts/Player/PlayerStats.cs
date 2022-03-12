@@ -13,15 +13,15 @@ public class PlayerStats : MonoBehaviour
     public float maxHpWithoutBuffs = 100;
     public float maxHp = 100;
     public float hp = 100;
-    
+
     public float maxStaminaWithoutBuffs = 100;
     public float maxStamina = 100;
     public float stamina = 100;
-    
+
     public float movementSpeedWithoutBuffs = 5;
     public float movementSpeed = 5;
     public float exhaustedMovementSpeed = 2;
-    
+
     public float damageWithoutBuffs;
     public float damage = 1.0f;
     public Transform attackPoint;
@@ -30,14 +30,14 @@ public class PlayerStats : MonoBehaviour
 
     public float invincibilityTime = 1;
     public float savedStartInvincibilityTime;
-    
+
     public float experience = 0;
     public int currentLevel = 1;
 
     public int money = 0;
-    
-    [SerializeField]private Bar healthBar;
-    [SerializeField]private Bar staminaBar;
+
+    [SerializeField] private Bar healthBar;
+    [SerializeField] private Bar staminaBar;
     public PlayerInventory inventory;
 
     private Transform attackPointCopy;
@@ -47,24 +47,22 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        
         Load();
+        UpdateInventoryBuffs();
 
         BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
+        inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
+        inventory.inventory.OnChange += UpdateInventoryBuffs;
         healthBar.SetMaxValueOnBar(hp);
-        staminaBar.SetMaxValueOnBar(stamina); 
-        
+        staminaBar.SetMaxValueOnBar(stamina);
     }
 
     private void OnEnable()
     {
-        UpdateInventoryBuffs();
-        inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
-        inventory.inventory.OnChange += UpdateInventoryBuffs;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
         inventory.inventory.OnChange -= UpdateInventoryBuffs;
@@ -79,16 +77,13 @@ public class PlayerStats : MonoBehaviour
         money += amount;
         return true;
     }
+
     public void ChangeHpValue(float changeValue)
     {
         if (hp + changeValue < 0)
-        {
             hp = 0;
-        }
         else if (hp + changeValue > maxHp)
-        {
             hp = maxHp;
-        }
         else hp += changeValue;
         healthBar.SetValueOnBar(hp);
     }
@@ -96,13 +91,9 @@ public class PlayerStats : MonoBehaviour
     public void ChangeStaminaValue(float changeValue)
     {
         if (stamina + changeValue < 0)
-        {
             stamina = 0;
-        }
         else if (stamina + changeValue > maxStamina)
-        {
             stamina = maxStamina;
-        }
         else stamina += changeValue;
         staminaBar.SetValueOnBar(stamina);
     }
@@ -136,11 +127,12 @@ public class PlayerStats : MonoBehaviour
                         break;
                     case Boost.MaxStamina:
                         maxStamina += boost.value;
-                        
+
                         break;
                 }
             }
         }
+
         staminaBar.SetOnlyMaxValueOnBar(maxStamina);
         healthBar.SetOnlyMaxValueOnBar(maxHp);
     }
@@ -153,18 +145,22 @@ public class PlayerStats : MonoBehaviour
             currentLevel++;
             switch (type)
             {
-                case 1: maxHpWithoutBuffs += 10;
+                case 1:
+                    maxHpWithoutBuffs += 10;
                     break;
-                case 2: maxStaminaWithoutBuffs += 10;
+                case 2:
+                    maxStaminaWithoutBuffs += 10;
                     break;
-                case 3: movementSpeedWithoutBuffs += 0.1f;
+                case 3:
+                    movementSpeedWithoutBuffs += 0.1f;
                     break;
-                case 4: damageWithoutBuffs += 1;
+                case 4:
+                    damageWithoutBuffs += 1;
                     break;
             }
+
             UpdateInventoryBuffs();
         }
-
     }
 
     public void AddExperience(float amount)
@@ -179,8 +175,6 @@ public class PlayerStats : MonoBehaviour
             ChangeHpValue(-enemy.damage);
             savedStartInvincibilityTime = Time.time;
         }
-
-
     }
 
     public void KilledEnemy(int money, int exp)
@@ -188,10 +182,9 @@ public class PlayerStats : MonoBehaviour
         ChangeMoney(money);
         AddExperience(exp);
     }
-    
+
     public void Save()
     {
-        //string saveData = JsonConvert.SerializeObject(this, Formatting.None, jsSettings);
         var saveData = JsonUtility.ToJson(this, true);
         var formatter = new BinaryFormatter();
         var file = File.Create($"{Application.persistentDataPath}/{saveFileName}");
@@ -219,13 +212,10 @@ public class PlayerStats : MonoBehaviour
             inventory = inventoryCopy;
             inventory.Load();
             
-            
             staminaBar.SetOnlyMaxValueOnBar(maxStamina);
             healthBar.SetOnlyMaxValueOnBar(maxHp);
             healthBar.SetValueOnBar(hp);
             staminaBar.SetValueOnBar(stamina);
-            
         }
     }
-    
 }

@@ -7,27 +7,26 @@ public class WalkingState : State
         Controller = controller;
         Controller._animator.SetBool("Running", true);
     }
+
     public override State Update()
     {
-        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) ) && Controller.playerStats.stamina >= 20)
+        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1)) &&
+            Controller.playerStats.stamina >= 20)
             return ChangeState(new StateAttack(Controller));
-        Controller.playerStats.ChangeStaminaValue(-0.04f);
+        Controller.playerStats.ChangeStaminaValue(-0.06f);
         _direction = HandleInput();
         return _direction == Vector2.zero ? ChangeState(new StateIdle(Controller)) : this;
     }
 
     public override Vector2 HandleInput()
     {
-        Vector2 input = new Vector2(Controller.joystick.Horizontal + Input.GetAxisRaw("Horizontal"),Controller.joystick.Vertical + Input.GetAxisRaw("Vertical"));
+        Vector2 input = new Vector2(Controller.joystick.Horizontal + Input.GetAxisRaw("Horizontal"),
+            Controller.joystick.Vertical + Input.GetAxisRaw("Vertical"));
         if (Controller._facingRight && input.x < 0)
-        {
             Controller.Flip();
-        }
         else if (!Controller._facingRight && input.x > 0)
-        {
             Controller.Flip();
-        }
-
+        
         return input.normalized;
     }
 
