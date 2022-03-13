@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Newtonsoft.Json;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -60,11 +55,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     public float Stamina => stamina;
-
-    private void OnEnable()
-    {
-    }
-
+    
     private void OnDestroy()
     {
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
