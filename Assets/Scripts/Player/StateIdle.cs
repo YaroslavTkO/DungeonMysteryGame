@@ -6,11 +6,11 @@ public class StateIdle : State
     {
         Controller.playerStats.ChangeStaminaValue(0.2f);
         _direction = HandleInput();
-        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) )&& Controller.playerStats.stamina >= 20)
+        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1) )&& Controller.playerStats.Stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         return _direction != Vector2.zero ? ChangeState(new WalkingState(Controller)) : this;
     }
-
+    
     public StateIdle(PlayerController controller)
     {
         Controller = controller;

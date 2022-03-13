@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -12,11 +13,11 @@ public class PlayerStats : MonoBehaviour
 
     public float maxHpWithoutBuffs = 100;
     public float maxHp = 100;
-    public float hp = 100;
+    private float hp = 100;
 
     public float maxStaminaWithoutBuffs = 100;
     public float maxStamina = 100;
-    public float stamina = 100;
+    private float stamina = 100;
 
     public float movementSpeedWithoutBuffs = 5;
     public float movementSpeed = 5;
@@ -28,8 +29,8 @@ public class PlayerStats : MonoBehaviour
     public float attackRange;
     public LayerMask enemyLayers;
 
-    public float invincibilityTime = 1;
-    public float savedStartInvincibilityTime;
+    private float invincibilityTime = 0.7f;
+    private float savedStartInvincibilityTime;
 
     public float experience = 0;
     public int currentLevel = 1;
@@ -57,6 +58,8 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxValueOnBar(hp);
         staminaBar.SetMaxValueOnBar(stamina);
     }
+
+    public float Stamina => stamina;
 
     private void OnEnable()
     {

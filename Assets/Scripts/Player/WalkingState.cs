@@ -11,7 +11,7 @@ public class WalkingState : State
     public override State Update()
     {
         if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1)) &&
-            Controller.playerStats.stamina >= 20)
+            Controller.playerStats.Stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         Controller.playerStats.ChangeStaminaValue(-0.06f);
         _direction = HandleInput();
@@ -37,7 +37,7 @@ public class WalkingState : State
 
     public override Vector2 FixedUpdate()
     {
-        return Controller.playerStats.stamina > 20
+        return Controller.playerStats.Stamina > 20
             ? _direction * Controller.playerStats.movementSpeed * Time.deltaTime
             : _direction * Controller.playerStats.exhaustedMovementSpeed * Time.deltaTime;
     }
