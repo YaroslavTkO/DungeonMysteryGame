@@ -6,14 +6,22 @@ using UnityEngine.SceneManagement;
 public class FinishLevel : MonoBehaviour
 {
     public int level;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            var saveStats = collision.gameObject.GetComponent<PlayerStats>();
+            if (saveStats)
+            {
+                saveStats.Save();
+                PlayerPrefs.SetString("savedLevel", "level1");
+            }
             UnLockLevel();
             SceneManager.LoadScene("level1");
         }
     }
+
     public void UnLockLevel()
     {
         if (level >= PlayerPrefs.GetInt("levels"))
