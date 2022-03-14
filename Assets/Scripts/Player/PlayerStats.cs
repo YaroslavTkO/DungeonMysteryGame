@@ -121,10 +121,10 @@ public class PlayerStats : MonoBehaviour
                         damage += boost.value;
                         break;
                     case Boost.MaxHealth:
-                        maxHp += boost.value;
+                        ChangeHpValue(boost.value);
                         break;
                     case Boost.MaxStamina:
-                        maxStamina += boost.value;
+                        ChangeStaminaValue(boost.value);
 
                         break;
                 }
