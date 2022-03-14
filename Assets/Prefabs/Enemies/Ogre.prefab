@@ -131,8 +131,8 @@ MonoBehaviour:
   player: {fileID: 0}
   healthBar: {fileID: 1297592260039238295}
   SavedTime: 0
-  killedMoney: 100
-  killedExp: 140
+  killedMoney: 80
+  killedExp: 100
   wallCollisions: 0000
 --- !u!61 &3093640755127635718
 BoxCollider2D:
