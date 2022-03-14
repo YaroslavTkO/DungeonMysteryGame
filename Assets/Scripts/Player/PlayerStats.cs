@@ -1,6 +1,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -80,6 +81,9 @@ public class PlayerStats : MonoBehaviour
             hp = maxHp;
         else hp += changeValue;
         healthBar.SetValueOnBar(hp);
+
+        if (hp <= 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeStaminaValue(float changeValue)
