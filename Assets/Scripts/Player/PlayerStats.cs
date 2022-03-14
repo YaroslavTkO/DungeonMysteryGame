@@ -121,7 +121,9 @@ public class PlayerStats : MonoBehaviour
                         damage += boost.value;
                         break;
                     case Boost.MaxHealth:
-                        ChangeHpValue(boost.value);
+                        maxHp += boost.value;
+                        if(maxHp <= 0)
+                            ChangeHpValue(-9999);
                         break;
                     case Boost.MaxStamina:
                         ChangeStaminaValue(boost.value);
@@ -132,7 +134,9 @@ public class PlayerStats : MonoBehaviour
         }
 
         staminaBar.SetOnlyMaxValueOnBar(maxStamina);
+        staminaBar.SetValueOnBar(stamina);
         healthBar.SetOnlyMaxValueOnBar(maxHp);
+        healthBar.SetValueOnBar(hp);
     }
 
     public void LevelUp(int type)
