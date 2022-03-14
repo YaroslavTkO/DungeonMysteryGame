@@ -15,6 +15,12 @@ public class namebotton : MonoBehaviour
             saveStats.Save();
             PlayerPrefs.SetString("savedLevel", levelIndex);
         }
+        var items = FindObjectOfType<ItemsOnLevel>();
+        if (items)
+        {
+            items.CheckCollected();
+            items.Save();
+        }
         SceneManager.LoadScene(levelIndex);
     }
 

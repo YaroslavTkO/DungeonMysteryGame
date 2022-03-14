@@ -30,6 +30,12 @@ public class LevelsMenu : MonoBehaviour
             saveStats.Save();
             PlayerPrefs.SetString("savedLevel", levelName);
         }
+        var items = FindObjectOfType<ItemsOnLevel>();
+        if (items)
+        {
+            items.CheckCollected();
+            items.Save();
+        }
         SceneManager.LoadScene(levelName);
     }
 
