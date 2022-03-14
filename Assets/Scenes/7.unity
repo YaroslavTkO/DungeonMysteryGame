@@ -14372,7 +14372,7 @@ Transform:
   m_LocalScale: {x: 1.1016825, y: 1.1016825, z: 1.1016825}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &383750217
 PrefabInstance:
@@ -18463,7 +18463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741734c5d72ecf24f97924e261c886b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 5
+  level: 2
 --- !u!61 &650164090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18872,7 +18872,7 @@ Transform:
   - {fileID: 55989813}
   - {fileID: 1067465477}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751033337
 GameObject:

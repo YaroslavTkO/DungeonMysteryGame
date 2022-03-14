@@ -12257,7 +12257,7 @@ Transform:
   m_LocalScale: {x: 5.3853817, y: 5.3853817, z: 5.3853817}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 76
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299928898
 GameObject:
@@ -12673,7 +12673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741734c5d72ecf24f97924e261c886b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 6
+  level: 8
 --- !u!61 &340751288
 BoxCollider2D:
   m_ObjectHideFlags: 0
