@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   facingRight: 0
-  hp: 35
+  hp: 50
   movementSpeed: 1
   runningMovementSpeed: 2
   timeToChangeDirection: 3
@@ -131,8 +131,8 @@ MonoBehaviour:
   player: {fileID: 0}
   healthBar: {fileID: 2460302880882246071}
   SavedTime: 0
-  killedMoney: 40
-  killedExp: 70
+  killedMoney: 45
+  killedExp: 60
   wallCollisions: 0000
 --- !u!58 &1930892803303148513
 CircleCollider2D:

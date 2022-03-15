@@ -104,10 +104,6 @@ public class PlayerStats : MonoBehaviour
     {
         maxHp = maxHpWithoutBuffs;
         maxStamina = maxStaminaWithoutBuffs;
-        if (hp > maxHpWithoutBuffs)
-            hp = maxHpWithoutBuffs;
-        if (stamina > maxStaminaWithoutBuffs)
-            stamina = maxStaminaWithoutBuffs;
         movementSpeed = movementSpeedWithoutBuffs;
         damage = damageWithoutBuffs;
         foreach (var slot in inventory.equippedInventory.slots)
@@ -136,6 +132,10 @@ public class PlayerStats : MonoBehaviour
                 }
             }
         }
+        if (hp > maxHp)
+            hp = maxHp;
+        if (stamina > maxStamina)
+            stamina = maxStamina;
 
         staminaBar.SetOnlyMaxValueOnBar(maxStamina);
         staminaBar.SetValueOnBar(stamina);
