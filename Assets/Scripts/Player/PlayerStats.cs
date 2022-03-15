@@ -44,15 +44,19 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        
         Load();
         UpdateInventoryBuffs();
+        stamina = maxStamina;
+        hp = maxHp;
+        healthBar.SetMaxValueOnBar(maxHp);
+        staminaBar.SetMaxValueOnBar(maxStamina);
 
         BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
         inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
         inventory.inventory.OnChange += UpdateInventoryBuffs;
-        healthBar.SetMaxValueOnBar(hp);
-        staminaBar.SetMaxValueOnBar(stamina);
+        
     }
 
     public float Stamina => stamina;
