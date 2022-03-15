@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 66361961}
   m_Layer: 0
   m_Name: tileset-sliced_401 (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,7 +1537,7 @@ GameObject:
   - component: {fileID: 97312209}
   m_Layer: 0
   m_Name: tileset-sliced_401 (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2041,7 +2041,7 @@ GameObject:
   - component: {fileID: 172764354}
   m_Layer: 0
   m_Name: tileset-sliced_401
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4780,7 +4780,7 @@ GameObject:
   - component: {fileID: 497636512}
   m_Layer: 0
   m_Name: tileset-sliced_401 (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5719,7 +5719,7 @@ GameObject:
   - component: {fileID: 604503946}
   m_Layer: 0
   m_Name: tileset-sliced_401 (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53830,7 +53830,7 @@ GameObject:
   - component: {fileID: 898854940}
   m_Layer: 0
   m_Name: tileset-sliced_401 (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54820,7 +54820,7 @@ GameObject:
   - component: {fileID: 1048703589}
   m_Layer: 0
   m_Name: tileset-sliced_401 (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54956,7 +54956,7 @@ GameObject:
   - component: {fileID: 1049763896}
   m_Layer: 0
   m_Name: tileset-sliced_401 (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57598,7 +57598,7 @@ GameObject:
   - component: {fileID: 1360075255}
   m_Layer: 0
   m_Name: tileset-sliced_401 (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138144,7 +138144,7 @@ GameObject:
   - component: {fileID: 1562026798}
   m_Layer: 0
   m_Name: tileset-sliced_401 (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140834,7 +140834,7 @@ GameObject:
   - component: {fileID: 1885156781}
   m_Layer: 0
   m_Name: tileset-sliced_401 (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141456,7 +141456,7 @@ GameObject:
   - component: {fileID: 1944450112}
   m_Layer: 0
   m_Name: tileset-sliced_401 (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
