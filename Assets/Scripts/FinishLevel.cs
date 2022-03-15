@@ -17,6 +17,12 @@ public class FinishLevel : MonoBehaviour
                 saveStats.Save();
                 PlayerPrefs.SetString("savedLevel", "level1");
             }
+            var items = FindObjectOfType<ItemsOnLevel>();
+            if (items)
+            {
+                items.CheckCollected();
+                items.Save();
+            }
             UnLockLevel();
             SceneManager.LoadScene("level1");
         }

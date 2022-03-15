@@ -6462,6 +6462,8 @@ MonoBehaviour:
   - {fileID: 1110939933}
   - {fileID: 319126918}
   - {fileID: 1857529481}
+  - {fileID: 439870782}
+  - {fileID: 169160356}
 --- !u!1 &862368686
 GameObject:
   m_ObjectHideFlags: 0
@@ -12330,7 +12332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8423717858566821669, guid: 7d7076749933250469fca972a3339551, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d7076749933250469fca972a3339551, type: 3}

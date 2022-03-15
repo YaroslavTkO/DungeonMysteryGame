@@ -126,7 +126,7 @@ public class PlayerStats : MonoBehaviour
                             ChangeHpValue(-9999);
                         break;
                     case Boost.MaxStamina:
-                        ChangeStaminaValue(boost.value);
+                        maxStamina += boost.value;
 
                         break;
                 }
