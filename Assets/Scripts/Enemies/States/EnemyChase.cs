@@ -12,33 +12,27 @@ public class EnemyChase : EnemyState
 
     public override void Update()
     {
-        if (Enemy.wallCollisions[0])
+        var origin = Enemy.gameObject.transform.position;
+        var target = Enemy.player.transform.position;
+        var direction = target - origin;
+        var hits = new RaycastHit2D[10];
+        var times = Physics2D.RaycastNonAlloc(origin, direction, hits, 1.5f);
+        var moveAmount = Enemy.runningMovementSpeed * Time.deltaTime;
+        for (int i = 0; i < times; i++)
         {
-            var vector = new Vector2(Enemy.transform.position.x < Enemy.player.transform.position.x ? -1 : 1, 0);
-            Enemy.transform.Translate(vector * Enemy.movementSpeed * Time.deltaTime);
+            if (hits[i].collider.gameObject.CompareTag("Wall"))
+            {
+                moveAmount = 0;
+                break;
+            }
         }
-        if (Enemy.wallCollisions[1])
-        {
-            Enemy.transform.Translate(
-                new Vector2(0, Enemy.transform.position.y < Enemy.player.transform.position.y ? -1 : 1) *
-                Enemy.movementSpeed * Time.deltaTime);
-        }
-        if (!Enemy.wallCollisions[0] && !Enemy.wallCollisions[1])
-        {
-            var moveAmount = Enemy.runningMovementSpeed * Time.deltaTime;
-            Enemy.transform.position = Vector3.MoveTowards(Enemy.gameObject.transform.position,
-                Enemy.player.transform.position, moveAmount);
-            if (Enemy.facingRight && Enemy.gameObject.transform.position.x > Enemy.player.transform.position.x)
-                Flip();
-            else if (!Enemy.facingRight && Enemy.gameObject.transform.position.x < Enemy.player.transform.position.x)
-                Flip();
-        }
-
-        if (Time.time - Enemy.SavedTime > 0.2)
-        {
-            Enemy.wallCollisions[0] = false;
-            Enemy.wallCollisions[1] = false;
-        }
+        Enemy.animator.SetBool("speedIsZero", moveAmount == 0);
+        Enemy.transform.position = Vector3.MoveTowards(origin,
+            Enemy.player.transform.position, moveAmount);
+        if (Enemy.facingRight && origin.x > target.x)
+            Flip();
+        else if (!Enemy.facingRight && origin.x < target.x)
+            Flip();
     }
 
     public override void OnTriggerEnter()
