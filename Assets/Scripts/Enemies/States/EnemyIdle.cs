@@ -21,36 +21,22 @@ public class EnemyIdle : EnemyState
             xRand = Random.Range(-1, 2);
             yRand = Random.Range(-1, 2);
         }
+
         var origin = Enemy.gameObject.transform.position;
-        var hits = new RaycastHit2D[4];
-        var times = Physics2D.RaycastNonAlloc(origin, Vector2.up, hits, 0.6f, Enemy.wallLayer);
-        for (int i = 0; i < times; i++)
-            if (hits[i])
-            {
-                yRand = Random.Range(-1, 1);
-                break;
-            }
-        times = Physics2D.RaycastNonAlloc(origin, Vector2.down, hits, 0.6f, Enemy.wallLayer);
-        for (int i = 0; i < times; i++)
-            if (hits[i])
-            {
-                yRand = Random.Range(0, 2);
-                break;
-            }
-        times = Physics2D.RaycastNonAlloc(origin, Vector2.left, hits, 0.6f, Enemy.wallLayer);
-        for (int i = 0; i < times; i++)
-            if (hits[i])
-            {
-                xRand = Random.Range(0, 2);
-                break;
-            }
-        times = Physics2D.RaycastNonAlloc(origin, Vector2.right, hits, 0.6f, Enemy.wallLayer);
-        for (int i = 0; i < times; i++)
-            if (hits[i])
-            {
-                xRand = Random.Range(-1, 1);
-                break;
-            }
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(origin, Vector2.up, 0.7f, Enemy.wallLayer);
+        if (hit)
+            yRand = Random.Range(-1, 1);
+        hit = Physics2D.Raycast(origin, Vector2.down, 0.7f, Enemy.wallLayer);
+        if (hit)
+            yRand = Random.Range(0, 2);
+        hit = Physics2D.Raycast(origin, Vector2.left, 0.7f, Enemy.wallLayer);
+        if (hit)
+            xRand = Random.Range(0, 2);
+        hit = Physics2D.Raycast(origin, Vector2.right, 0.7f, Enemy.wallLayer);
+        if (hit)
+            xRand = Random.Range(-1, 1);
+
         if (xRand == 0 && yRand == 0)
             Enemy.animator.SetBool("speedIsZero", true);
         else Enemy.animator.SetBool("speedIsZero", false);
