@@ -15,33 +15,23 @@ public class Enemy : BaseEnemy
     public Animator animator;
     public GameObject player;
     public Bar healthBar;
-    public float SavedTime;
     public int killedMoney;
     public int killedExp;
-    
-    //ahead  0
-    //upDown 1
-    public bool[] wallCollisions = new bool[2];
-
+    public LayerMask wallLayer;
 
     public delegate void IsKilled(int money, int exp);
 
     public static event IsKilled Killed;
-  //  public delegate void AttackPlayer(Enemy enemy);
-
-  //  public static event AttackPlayer Attacked;
 
 
     private void Awake()
     {
+        wallLayer = LayerMask.GetMask("Wall");
         animator = GetComponent<Animator>();
     }
 
     void Start()
     {
-        wallCollisions = new bool[2];
-        for (int i = 0; i < wallCollisions.Length; i++)
-            wallCollisions[i] = false;
         healthBar.SetMaxValueOnBar(hp);
         facingRight = true;
         CurrentState = new EnemyIdle(this);
@@ -74,10 +64,4 @@ public class Enemy : BaseEnemy
         player = null;
         CurrentState = CurrentState.ChangeState(new EnemyIdle(this));
     }
-
-  /*  public void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            Attacked?.Invoke(this);
-    }*/
 }
