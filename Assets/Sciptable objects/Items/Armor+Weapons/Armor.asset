@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
   m_Name: Armor
   m_EditorClassIdentifier: 
-  id: 0
+  id: 28
   itemSprite: {fileID: 5486365788756030965, guid: 38aa580623a25c74bb878227d751830b, type: 3}
   type: 5
   isStakable: 0
   boosts:
   - boostType: 1
     value: 16
-  price: 0
+  price: 100
   description: 'Armor
 
     Low quality chain mail armor.

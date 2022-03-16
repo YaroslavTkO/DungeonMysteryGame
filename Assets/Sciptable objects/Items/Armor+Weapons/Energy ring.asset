@@ -19,7 +19,7 @@ MonoBehaviour:
   boosts:
   - boostType: 0
     value: 10
-  price: 0
+  price: 50
   description: 'Energy Ring
 
     Gives a small amount of energy to it''s wearer.'

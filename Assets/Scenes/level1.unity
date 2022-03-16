@@ -2915,6 +2915,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6902396303804011991, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6660344819975002640, guid: d0c8c86b8b99a3449a29512e50179784, type: 3}
     - target: {fileID: 7025309701977042415, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
       propertyPath: m_Name
       value: PlayerwithCanvasPrefab
