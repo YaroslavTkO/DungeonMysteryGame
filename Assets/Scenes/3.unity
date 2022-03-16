@@ -12836,8 +12836,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1003663440
-CircleCollider2D:
+--- !u!70 &1003663440
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12849,9 +12849,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.04
+  m_Offset: {x: 0.124357216, y: -0.15988663}
+  m_Size: {x: 4.15962, y: 2.205464}
+  m_Direction: 1
 --- !u!4 &1003663441
 Transform:
   m_ObjectHideFlags: 0
@@ -13981,8 +13981,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1201736853
-CircleCollider2D:
+--- !u!70 &1201736853
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13994,9 +13994,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.04
+  m_Offset: {x: 0.18776608, y: -0.20862485}
+  m_Size: {x: 4.212842, y: 2.2517693}
+  m_Direction: 1
 --- !u!4 &1201736854
 Transform:
   m_ObjectHideFlags: 0

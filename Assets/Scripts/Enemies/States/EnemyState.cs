@@ -13,12 +13,11 @@ public abstract class EnemyState
         return newState;
     }
 
-    public abstract void OnTriggerEnter();
-
     public void Flip()
     {
         Enemy.facingRight = !Enemy.facingRight;
-        Enemy.transform.localScale = new Vector3(Enemy.transform.localScale.x * (-1), Enemy.transform.localScale.y,
-            Enemy.transform.localScale.z);
+        var scale = Enemy.transform.localScale;
+        Enemy.transform.localScale = new Vector3(scale.x * (-1), scale.y,
+            scale.z);
     }
 }
