@@ -5,7 +5,6 @@ public class EnemyChase : EnemyState
     public EnemyChase(Enemy enemy)
     {
         Enemy = enemy;
-        Enemy.animator.SetBool("speedIsZero", false);
     }
 
     public override void Update()
@@ -23,9 +22,5 @@ public class EnemyChase : EnemyState
             Flip();
         else if (!Enemy.facingRight && origin.x < target.x)
             Flip();
-    }
-
-    public override void OnTriggerEnter()
-    {
     }
 }

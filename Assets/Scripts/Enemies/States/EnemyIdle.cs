@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyIdle : EnemyState
 {
-    public float SavedTime;
+    private float SavedTime;
     private int xRand;
     private int yRand;
 
@@ -43,8 +43,5 @@ public class EnemyIdle : EnemyState
         else if (!Enemy.facingRight && moveAmount.x > 0)
             Flip();
     }
-
-    public override void OnTriggerEnter()
-    {
-    }
+    
 }
