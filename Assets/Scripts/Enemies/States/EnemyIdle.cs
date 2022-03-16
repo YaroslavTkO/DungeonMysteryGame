@@ -23,18 +23,14 @@ public class EnemyIdle : EnemyState
         }
 
         var origin = Enemy.gameObject.transform.position;
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(origin, Vector2.up, 0.7f, Enemy.wallLayer);
-        if (hit)
+        
+        if (Physics2D.Raycast(origin, Vector2.up, 0.7f, Enemy.wallLayer))
             yRand = Random.Range(-1, 1);
-        hit = Physics2D.Raycast(origin, Vector2.down, 0.7f, Enemy.wallLayer);
-        if (hit)
+        if (Physics2D.Raycast(origin, Vector2.down, 0.7f, Enemy.wallLayer))
             yRand = Random.Range(0, 2);
-        hit = Physics2D.Raycast(origin, Vector2.left, 0.7f, Enemy.wallLayer);
-        if (hit)
+        if (Physics2D.Raycast(origin, Vector2.left, 0.7f, Enemy.wallLayer))
             xRand = Random.Range(0, 2);
-        hit = Physics2D.Raycast(origin, Vector2.right, 0.7f, Enemy.wallLayer);
-        if (hit)
+        if (Physics2D.Raycast(origin, Vector2.right, 0.7f, Enemy.wallLayer))
             xRand = Random.Range(-1, 1);
 
         if (xRand == 0 && yRand == 0)

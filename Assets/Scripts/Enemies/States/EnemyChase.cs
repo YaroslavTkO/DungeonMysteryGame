@@ -13,10 +13,8 @@ public class EnemyChase : EnemyState
         var origin = Enemy.gameObject.transform.position;
         var target = Enemy.player.transform.position;
         var direction = target - origin;
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(origin, direction, 1.3f, Enemy.wallLayer);
         var moveAmount = Enemy.runningMovementSpeed * Time.deltaTime;
-        if (hit)
+        if(Physics2D.Raycast(origin, direction, 1.3f, Enemy.wallLayer))
             moveAmount = 0;
         Enemy.animator.SetBool("speedIsZero", moveAmount == 0);
         Enemy.transform.position = Vector3.MoveTowards(origin,
