@@ -23,7 +23,7 @@ MonoBehaviour:
     value: 10
   - boostType: 4
     value: -0.1
-  price: 0
+  price: 70
   description: 'Club
 
     Turn your enemy into ashes with this weapon.

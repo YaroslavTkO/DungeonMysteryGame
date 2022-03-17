@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
   m_Name: Soldier helmet
   m_EditorClassIdentifier: 
-  id: 0
+  id: 18
   itemSprite: {fileID: -8573138194491588509, guid: 38aa580623a25c74bb878227d751830b, type: 3}
   type: 3
   isStakable: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 8
   - boostType: 4
     value: -0.1
-  price: 0
+  price: 80
   description: 'Soldier helmet
 
     Low quality iron helmet.

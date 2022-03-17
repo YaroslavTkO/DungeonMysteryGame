@@ -119,19 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c9637e9a5377746a95ceeee29b5c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 16
+  damage: 40
   facingRight: 0
-  hp: 30
+  hp: 100
   movementSpeed: 1.2
   runningMovementSpeed: 2.3
   timeToChangeDirection: 2
   animator: {fileID: 0}
   player: {fileID: 0}
   healthBar: {fileID: 8326760975401242414}
-  SavedTime: 0
-  killedMoney: 40
-  killedExp: 50
-  wallCollisions: 0000
+  killedMoney: 90
+  killedExp: 100
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &5431816501326152118
 BoxCollider2D:
   m_ObjectHideFlags: 0
