@@ -109,10 +109,11 @@ MonoBehaviour:
   animator: {fileID: 0}
   player: {fileID: 0}
   healthBar: {fileID: 2539272858450056649}
-  SavedTime: 0
-  killedMoney: 20
+  killedMoney: 10
   killedExp: 30
-  wallCollisions: 0000
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &2004778717867411679
 CircleCollider2D:
   m_ObjectHideFlags: 0

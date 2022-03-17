@@ -128,10 +128,11 @@ MonoBehaviour:
   animator: {fileID: 0}
   player: {fileID: 0}
   healthBar: {fileID: 1297592260039238295}
-  SavedTime: 0
-  killedMoney: 45
+  killedMoney: 20
   killedExp: 65
-  wallCollisions: 0000
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &3093640755127635718
 BoxCollider2D:
   m_ObjectHideFlags: 0

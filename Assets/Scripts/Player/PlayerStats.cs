@@ -44,7 +44,6 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        
         Load();
         UpdateInventoryBuffs();
         stamina = maxStamina;
@@ -56,11 +55,10 @@ public class PlayerStats : MonoBehaviour
         Enemy.Killed += KilledEnemy;
         inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
         inventory.inventory.OnChange += UpdateInventoryBuffs;
-        
     }
 
     public float Stamina => stamina;
-    
+
     private void OnDestroy()
     {
         inventory.equippedInventory.OnChange -= UpdateInventoryBuffs;
@@ -87,7 +85,8 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetValueOnBar(hp);
 
         if (hp <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Death();
+        //  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeStaminaValue(float changeValue)
@@ -122,7 +121,7 @@ public class PlayerStats : MonoBehaviour
                         break;
                     case Boost.MaxHealth:
                         maxHp += boost.value;
-                        if(maxHp <= 0)
+                        if (maxHp <= 0)
                             ChangeHpValue(-9999);
                         break;
                     case Boost.MaxStamina:
@@ -132,6 +131,7 @@ public class PlayerStats : MonoBehaviour
                 }
             }
         }
+
         if (hp > maxHp)
             hp = maxHp;
         if (stamina > maxStamina)
@@ -217,11 +217,23 @@ public class PlayerStats : MonoBehaviour
             staminaBar = staminaBarCopy;
             inventory = inventoryCopy;
             inventory.Load();
-            
+
             staminaBar.SetOnlyMaxValueOnBar(maxStamina);
             healthBar.SetOnlyMaxValueOnBar(maxHp);
             healthBar.SetValueOnBar(hp);
             staminaBar.SetValueOnBar(stamina);
+        }
+    }
+
+    public void Death()
+    {
+        var menu = FindObjectOfType<Death>();
+        if (menu)
+        {
+            menu.panel.SetActive(true);
+            menu.buttons.SetActive(false);
+            gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
     }
 }
