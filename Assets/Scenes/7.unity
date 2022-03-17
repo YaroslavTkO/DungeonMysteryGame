@@ -14669,7 +14669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &382316234
 Rigidbody2D:
   serializedVersion: 4
@@ -15025,7 +15025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &467633263
 Rigidbody2D:
   serializedVersion: 4
@@ -15450,7 +15450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &511111202
 Rigidbody2D:
   serializedVersion: 4
@@ -18874,7 +18874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &530539905
 Rigidbody2D:
   serializedVersion: 4
@@ -19061,7 +19061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &564107669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19977,7 +19977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &688604772
 Rigidbody2D:
   serializedVersion: 4
@@ -20631,7 +20631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &868791861
 Rigidbody2D:
   serializedVersion: 4
@@ -21076,7 +21076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &900980483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22254,7 +22254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &979289807
 Rigidbody2D:
   serializedVersion: 4
@@ -23426,7 +23426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1157951649
 Rigidbody2D:
   serializedVersion: 4
@@ -23718,7 +23718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1235961994
 Rigidbody2D:
   serializedVersion: 4
@@ -25050,7 +25050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1433922630
 Rigidbody2D:
   serializedVersion: 4
@@ -25481,7 +25481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &1498952559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25990,7 +25990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1654899814
 Rigidbody2D:
   serializedVersion: 4
@@ -26155,7 +26155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1671167185
 Rigidbody2D:
   serializedVersion: 4
@@ -26469,7 +26469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &1776002287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26678,7 +26678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1779785228
 Rigidbody2D:
   serializedVersion: 4
@@ -27039,7 +27039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1808867189
 Rigidbody2D:
   serializedVersion: 4
@@ -28046,7 +28046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &1982458614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28190,7 +28190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &1989708064
 Rigidbody2D:
   serializedVersion: 4
@@ -33531,7 +33531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &2063768906
 Rigidbody2D:
   serializedVersion: 4

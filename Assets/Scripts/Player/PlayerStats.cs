@@ -44,6 +44,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        inventory.inventory.database.Serialize();
         Load();
         UpdateInventoryBuffs();
         stamina = maxStamina;
