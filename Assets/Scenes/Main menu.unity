@@ -545,6 +545,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueGame: {fileID: 1859244990}
+  inventories:
+  - {fileID: 11400000, guid: 1916b23d057d6e84393a9b5cb0000592, type: 2}
+  - {fileID: 11400000, guid: b62cd0408bc8eb447830660dd5ae9e1d, type: 2}
+  - {fileID: 11400000, guid: dba28a9b45e6e6c45aa7cba4bec32340, type: 2}
+  database: {fileID: 11400000, guid: a2102f12183037c4cbc6a596538065c2, type: 2}
 --- !u!1 &1027801173
 GameObject:
   m_ObjectHideFlags: 0

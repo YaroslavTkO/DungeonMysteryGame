@@ -19,7 +19,7 @@ MonoBehaviour:
   boosts:
   - boostType: 2
     value: 100
-  price: 40
+  price: 45
   description: 'Heal potion
 
     Potion that was invented by ancient mages.
