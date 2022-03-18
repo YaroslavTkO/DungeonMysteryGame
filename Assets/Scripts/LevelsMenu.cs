@@ -12,8 +12,7 @@ public class LevelsMenu : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("levels", 15);
-        levelUnLock = PlayerPrefs.GetInt("levels", 1);
+        levelUnLock = PlayerPrefs.GetInt("levels", 15);
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = i < levelUnLock;

@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &19379694
 Animator:
   serializedVersion: 3
@@ -18603,7 +18603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &107799592
 Animator:
   serializedVersion: 3
@@ -20467,7 +20467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &335720776
 Animator:
   serializedVersion: 3
@@ -24487,7 +24487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &563271914
 Animator:
   serializedVersion: 3
@@ -24687,7 +24687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &570624657
 Animator:
   serializedVersion: 3
@@ -25473,7 +25473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &738010974
 Animator:
   serializedVersion: 3
@@ -30559,7 +30559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &973698137
 Animator:
   serializedVersion: 3
@@ -30794,7 +30794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &987011826
 Animator:
   serializedVersion: 3
@@ -31285,7 +31285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1049707353
 Animator:
   serializedVersion: 3
@@ -31490,7 +31490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1064106581
 Animator:
   serializedVersion: 3
@@ -32115,7 +32115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1155852654
 Animator:
   serializedVersion: 3
@@ -32581,7 +32581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1227321311
 Animator:
   serializedVersion: 3
@@ -33145,7 +33145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1334746485
 Animator:
   serializedVersion: 3
@@ -33314,7 +33314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1338753420
 Animator:
   serializedVersion: 3
@@ -33959,7 +33959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1478958281
 Animator:
   serializedVersion: 3
@@ -34213,7 +34213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1488230622
 Animator:
   serializedVersion: 3
@@ -34574,7 +34574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1511619926
 Animator:
   serializedVersion: 3
@@ -40963,7 +40963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1760163495
 Animator:
   serializedVersion: 3
@@ -41273,7 +41273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1800690939
 Animator:
   serializedVersion: 3
@@ -41416,7 +41416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1809837480
 Animator:
   serializedVersion: 3
@@ -41559,7 +41559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1811503896
 Animator:
   serializedVersion: 3
@@ -41702,7 +41702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1841678460
 Animator:
   serializedVersion: 3
@@ -42319,7 +42319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1946924698
 Animator:
   serializedVersion: 3
@@ -43215,7 +43215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &2135080898
 Animator:
   serializedVersion: 3

@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &358099831
 Animator:
   serializedVersion: 3
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 10
 --- !u!95 &634975138
 Animator:
   serializedVersion: 3
@@ -16460,7 +16460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &778083469
 Animator:
   serializedVersion: 3
@@ -17142,7 +17142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &868052940
 Animator:
   serializedVersion: 3
@@ -20826,7 +20826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1143188306
 Animator:
   serializedVersion: 3
@@ -22604,7 +22604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1378991964
 Animator:
   serializedVersion: 3
@@ -26926,7 +26926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1614266110
 Animator:
   serializedVersion: 3
@@ -27394,7 +27394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1660049180
 Animator:
   serializedVersion: 3
@@ -27799,7 +27799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 10
 --- !u!95 &1721933758
 Animator:
   serializedVersion: 3
@@ -28255,7 +28255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!95 &1771038578
 Animator:
   serializedVersion: 3

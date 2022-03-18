@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 20
   - boostType: 4
     value: -0.2
-  price: 100
+  price: 180
   description: 'Health ring
 
     Ring that is made of pure iron.

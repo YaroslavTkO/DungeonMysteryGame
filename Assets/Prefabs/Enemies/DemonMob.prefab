@@ -129,7 +129,7 @@ MonoBehaviour:
   player: {fileID: 0}
   healthBar: {fileID: 7944342119584149514}
   killedMoney: 50
-  killedExp: 80
+  killedExp: 160
   wallLayer:
     serializedVersion: 2
     m_Bits: 0

@@ -8,6 +8,11 @@ public class Database : ScriptableObject, ISerializationCallbackReceiver
 {
     public Item[] items;
 
+    public void Serialize()
+    {
+        for (int i = 0; i < items.Length; i++)
+            items[i].id = i;
+    }
     private void OnEnable()
     {
         for (int i = 0; i < items.Length; i++)
