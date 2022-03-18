@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Inventory", menuName = "InventorySystem/Inventory")]
 public class Inventory : ScriptableObject
@@ -94,16 +95,17 @@ public class Inventory : ScriptableObject
 
     public void Load()
     {
+        ClearInventory();
         var copyDatabase = database;
         var path = Application.persistentDataPath + "/" + saveFileName;
         if (File.Exists(path))
         {
-            ClearInventory();
             var formatter = new BinaryFormatter();
             var file = File.Open($"{Application.persistentDataPath}/{saveFileName}", FileMode.Open);
             JsonUtility.FromJsonOverwrite(formatter.Deserialize(file).ToString(), this);
             file.Close();
             database = copyDatabase;
+
         }
         else
         {

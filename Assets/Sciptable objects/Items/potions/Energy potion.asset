@@ -19,7 +19,7 @@ MonoBehaviour:
   boosts:
   - boostType: 3
     value: 100
-  price: 25
+  price: 30
   description: 'Energy potion
 
     Restores stamina. Travelers love this one. '

@@ -29,15 +29,5 @@ public class DisplayShop : DisplayInventory1
         descriptionField.text = DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
         itemToBuy = DisplayedItems[obj].item;
     }
-
- /*   public void ItemToBuy(Item item)
-    {
-        itemToBuy.boosts = item.boosts;
-        itemToBuy.description = item.description;
-        itemToBuy.id = item.id;
-        itemToBuy.price = item.price;
-        itemToBuy.type = item.type;
-        itemToBuy.isStakable = item.isStakable;
-        itemToBuy.itemSprite = item.itemSprite;
-    }*/
+    
 }
