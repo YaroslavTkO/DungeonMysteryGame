@@ -10299,7 +10299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &447030059
 PrefabInstance:
@@ -10492,7 +10492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &567363517
 PrefabInstance:
@@ -11010,7 +11010,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748143715
 GameObject:
@@ -11247,7 +11247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &799469599
 MonoBehaviour:
@@ -11384,7 +11384,7 @@ Transform:
   - {fileID: 1793612833}
   - {fileID: 59302360}
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &853398804
 GameObject:
@@ -11436,7 +11436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865641198
 GameObject:
@@ -11484,7 +11484,7 @@ Transform:
   - {fileID: 256100481}
   - {fileID: 1937942975}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875347906
 GameObject:
@@ -26342,7 +26342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204205179 stripped
 GameObject:
@@ -27316,6 +27316,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+--- !u!114 &1581295741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238325116569259266, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+  m_PrefabInstance: {fileID: 1581295740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed3d71cd9c20b343917b9c74c160613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603075372
 GameObject:
   m_ObjectHideFlags: 0
@@ -31446,6 +31457,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a464d878964b5514e95b61956c1c1f1c, type: 3}
+--- !u!1001 &2029385581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 268511825069087380, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_Name
+      value: Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: Display
+      value: 
+      objectReference: {fileID: 1581295741}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.nameOfNpc
+      value: Unknown Note 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[0]
+      value: 'Finally! After many researches and tests I extracted almost pure ether. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[1]
+      value: I think I am one step before the  great discovery.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[2]
+      value: 'It can change our lives completely. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.12588
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.580031
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
 --- !u!1 &2105145731
 GameObject:
   m_ObjectHideFlags: 0

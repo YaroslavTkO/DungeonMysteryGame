@@ -14,7 +14,9 @@ public class StateAttack : State
             controller.playerStats.attackRange, controller.playerStats.enemyLayers);
         foreach (var enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(controller.playerStats.damage);
+            var En = enemy.GetComponent<Enemy>();
+            if (En)
+                En.TakeDamage(controller.playerStats.damage);
         }
     }
 
