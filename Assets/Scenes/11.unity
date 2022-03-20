@@ -26009,8 +26009,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: dialogue.dialogue.Array.data[4]
-      value: I don't know if someone will ever find my notes. Maybe this whole expedition
-        and my life was completely meaningless.
+      value: I don't know if someone will ever find my notes. Maybe this expedition
+        and my whole life were completely meaningless.
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: m_RootOrder
