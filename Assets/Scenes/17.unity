@@ -29786,7 +29786,7 @@ Transform:
   - {fileID: 850317202}
   - {fileID: 768684540}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &584522220
 PrefabInstance:
@@ -30634,7 +30634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: dialogue.dialogue.Array.data[0]
-      value: Waters here is extremely deadly and poisonous.
+      value: Water here is extremely deadly and poisonous.
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: dialogue.dialogue.Array.data[1]
@@ -31567,7 +31567,7 @@ Transform:
   - {fileID: 1425874648}
   - {fileID: 1968022592}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &942043385
 PrefabInstance:
@@ -32476,7 +32476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1178085472
 PrefabInstance:
@@ -35087,7 +35087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706659370729318880, guid: a350f8adb6750e24ca1968262d39d4cd, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5706659370729318880, guid: a350f8adb6750e24ca1968262d39d4cd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38462,7 +38462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2050963993
 PrefabInstance:
