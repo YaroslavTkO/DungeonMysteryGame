@@ -109,8 +109,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   player: {fileID: 0}
   healthBar: {fileID: 2539272858450056649}
-  killedMoney: 10
-  killedExp: 30
+  killedMoney: 8
+  killedExp: 15
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
