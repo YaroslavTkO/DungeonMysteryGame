@@ -13,12 +13,13 @@ public class DisplayInventory1 : MonoBehaviour
     public Text descriptionField;
     protected Dictionary<GameObject, InventorySlot> DisplayedItems = new Dictionary<GameObject, InventorySlot>();
     protected InventoryMouseData MouseData = new InventoryMouseData();
+    protected bool _currentlyDragging = false;
 
     void Start()
     {
         CreateSlots();
     }
-    
+
     private void OnEnable()
     {
         UpdateSlots();
@@ -34,8 +35,8 @@ public class DisplayInventory1 : MonoBehaviour
 
     void Update()
     {
-       // Debug.Log(Time.timeScale);
-    //    UpdateSlots();
+        // Debug.Log(Time.timeScale);
+        //    UpdateSlots();
     }
 
     public void CreateSlots()
@@ -88,19 +89,26 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnDragStart(GameObject obj)
     {
-        var mouseObj = new GameObject();
-        var rectTransform = mouseObj.AddComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(80, 80);
-        mouseObj.transform.SetParent(transform.parent);
-        if (DisplayedItems[obj].item.id > 0)
+        if (_currentlyDragging)
         {
-            var image = mouseObj.AddComponent<Image>();
-            image.sprite = DisplayedItems[obj].item.itemSprite;
-            image.raycastTarget = false;
         }
+        else
+        {
+            _currentlyDragging = true;
+            var mouseObj = new GameObject();
+            var rectTransform = mouseObj.AddComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(80, 80);
+            mouseObj.transform.SetParent(transform.parent);
+            if (DisplayedItems[obj].item.id > 0)
+            {
+                var image = mouseObj.AddComponent<Image>();
+                image.sprite = DisplayedItems[obj].item.itemSprite;
+                image.raycastTarget = false;
+            }
 
-        MouseData.MouseObj = mouseObj;
-        MouseData.MouseItem = DisplayedItems[obj];
+            MouseData.MouseObj = mouseObj;
+            MouseData.MouseItem = DisplayedItems[obj];
+        }
     }
 
     public void OnDragEnd(GameObject obj)
@@ -113,8 +121,10 @@ public class DisplayInventory1 : MonoBehaviour
         {
             inventory.RemoveItem(DisplayedItems[obj]);
         }
+
         Destroy(MouseData.MouseObj);
         MouseData.MouseItem = null;
+        _currentlyDragging = false;
     }
 
     public void OnDrag(GameObject obj)
@@ -127,7 +137,7 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
-        descriptionField.text = DisplayedItems.ContainsKey(obj)? DisplayedItems[obj].item.description:"";
+        descriptionField.text = DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)

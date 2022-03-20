@@ -26,7 +26,7 @@ public class DisplayShop : DisplayInventory1
     }
     private new void OnPointerDown(GameObject obj)
     {
-        descriptionField.text = DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
+        descriptionField.text =DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
         itemToBuy = DisplayedItems[obj].item;
     }
     

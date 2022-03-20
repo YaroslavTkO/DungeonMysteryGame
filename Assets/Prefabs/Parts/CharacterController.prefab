@@ -80,7 +80,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  experience: 200
+  experience: 0
   currentLevel: 1
   money: 0
   healthBar: {fileID: 0}
