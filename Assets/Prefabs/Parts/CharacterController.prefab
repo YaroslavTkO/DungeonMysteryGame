@@ -49,9 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2793a9cee09f4bb46a0048658129c325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
   playerStats: {fileID: 41852894}
   _animator: {fileID: 0}
   _facingRight: 1
+  attackButtonIsPressed: 0
 --- !u!114 &41852894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHpWithoutBuffs: 100
   maxHp: 100
-  hp: 100
   maxStaminaWithoutBuffs: 100
   maxStamina: 100
-  stamina: 100
   movementSpeedWithoutBuffs: 5
   movementSpeed: 5
   exhaustedMovementSpeed: 2
@@ -80,10 +80,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  invincibilityTime: 0.7
-  savedStartInvincibilityTime: 0
   experience: 200
   currentLevel: 1
+  money: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   inventory: {fileID: 3446284691766703980}
@@ -102,7 +101,6 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: dba28a9b45e6e6c45aa7cba4bec32340, type: 2}
   equippedInventory: {fileID: 11400000, guid: b62cd0408bc8eb447830660dd5ae9e1d, type: 2}
   foodInventory: {fileID: 11400000, guid: 1916b23d057d6e84393a9b5cb0000592, type: 2}
-  inventoryGUI: {fileID: 0}
 --- !u!61 &6466965300863558399
 BoxCollider2D:
   m_ObjectHideFlags: 0
