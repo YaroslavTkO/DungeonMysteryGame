@@ -98,8 +98,7 @@ public class DisplayPlayerInventory : DisplayInventory1
             equippedInventory.RemoveItem(DisplayedItems[obj]);
             foodInventory.RemoveItem(DisplayedItems[obj]);
         }
-
-        Debug.Log("Destroy called next");
+        
         Destroy(MouseData.MouseObj);
         MouseData.MouseItem = null;
         _currentlyDragging = false;
