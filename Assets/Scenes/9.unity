@@ -443,6 +443,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a709293278634469b2e5eeaa249fd0, type: 3}
+--- !u!114 &160900340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238325116569259266, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+  m_PrefabInstance: {fileID: 1975754380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed3d71cd9c20b343917b9c74c160613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &179846073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127985360818443428, guid: f012833584ecf1243a569d064b651930, type: 3}
@@ -513,7 +524,7 @@ Transform:
   - {fileID: 1925110787}
   - {fileID: 958292447}
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &210354724
 GameObject:
@@ -16824,6 +16835,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff4fc353a805f94483825a86dc41e94, type: 3}
+--- !u!1001 &388864551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 268511825069087380, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_Name
+      value: Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: Display
+      value: 
+      objectReference: {fileID: 160900340}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.nameOfNpc
+      value: Unknown Note 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[0]
+      value: Some of previous injected started to lose their minds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[1]
+      value: I am trying to find the way to stop this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[2]
+      value: 'It seems that ether is destroying your mind even with a small dose,
+        it''s just a matter of time. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 127.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
 --- !u!1001 &393884170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19967,7 +20064,7 @@ Transform:
   - {fileID: 263911875}
   - {fileID: 1996848912}
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197864616 stripped
 GameObject:
@@ -32437,7 +32534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1679450370
 MonoBehaviour:
@@ -32759,7 +32856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1798633319
 PrefabInstance:
@@ -34289,7 +34386,7 @@ Transform:
   - {fileID: 1347246175}
   - {fileID: 210354725}
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2119330741
 PrefabInstance:

@@ -685,6 +685,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.983643, y: 3.191187}
   m_EdgeRadius: 0
+--- !u!114 &217016350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238325116569259266, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+  m_PrefabInstance: {fileID: 1267498034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed3d71cd9c20b343917b9c74c160613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &221316343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18997,6 +19008,84 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.98283, y: 5.1141663}
   m_EdgeRadius: 0
+--- !u!1001 &978734143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 268511825069087380, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_Name
+      value: Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: Display
+      value: 
+      objectReference: {fileID: 217016350}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.nameOfNpc
+      value: Unknown Note 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[0]
+      value: We caught some of this monsters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[1]
+      value: As I thougt monsters here have more ether in their body than monsters
+        from forest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: dialogue.dialogue.Array.data[2]
+      value: I assume their power is proportional to the amount of ether in them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5182214
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 268511825069087594, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
 --- !u!1001 &986125366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20209,7 +20298,7 @@ Transform:
   - {fileID: 884741428}
   - {fileID: 1702234299}
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1335598994
 GameObject:
@@ -20314,7 +20403,7 @@ Transform:
   - {fileID: 488655689}
   - {fileID: 966293560}
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355386516 stripped
 GameObject:
@@ -20416,7 +20505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1409240129
 BoxCollider2D:
@@ -20586,7 +20675,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426415002
 GameObject:
