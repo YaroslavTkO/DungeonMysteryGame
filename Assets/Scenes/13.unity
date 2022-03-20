@@ -1802,13 +1802,11 @@ MonoBehaviour:
     dialogue:
     - Congratulations. You reached the end.
     - I guess you are curious, and have many questions.
-    - 'For example: What is this place? Who am I? How this place is connected to
-      your world?'
+    - 'For example: What is this place? Who am I? What is the purpose of this place?'
     - Humans call me Ether. I am the god of this place.
-    - ' I don''t know much about your world, and what connections between my and
-      your worlds.'
     - I don't know when this world and I have started to exist, who build it, and
       when it's going to vanish.
+    - Also I don't whether this world has any purpose.
     - But i guess if you reached this place maybe it means something.
     - Or maybe not.
   Display: {fileID: 463368995}

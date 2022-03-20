@@ -19296,7 +19296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &584652567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19752,7 +19752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!1 &678924948
 GameObject:
   m_ObjectHideFlags: 0
@@ -20907,7 +20907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!50 &879767314
 Rigidbody2D:
   serializedVersion: 4
@@ -21298,7 +21298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &911050971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21573,7 +21573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!1 &918898242
 GameObject:
   m_ObjectHideFlags: 0
@@ -22110,7 +22110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &972252565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25247,7 +25247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &1475046057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27625,7 +27625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!61 &1859002843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27770,7 +27770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: dialogue.dialogue.Array.data[2]
-      value: 'But results are poor. Many of injected just dies, others become inhuman
+      value: 'But results are poor. Many of injected just die, others become inhuman
         beasts. '
       objectReference: {fileID: 0}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
@@ -33410,7 +33410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e8d3184cd587b4f9391a17dc745154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
 --- !u!1 &2022401070
 GameObject:
   m_ObjectHideFlags: 0
