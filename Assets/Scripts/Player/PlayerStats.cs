@@ -122,8 +122,6 @@ public class PlayerStats : MonoBehaviour
                         break;
                     case Boost.MaxHealth:
                         maxHp += boost.value;
-                        if (maxHp <= 0)
-                            ChangeHpValue(-9999);
                         break;
                     case Boost.MaxStamina:
                         maxStamina += boost.value;
@@ -133,6 +131,8 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+        if (maxHp <= 0)
+            ChangeHpValue(-9999);
         if (hp > maxHp)
             hp = maxHp;
         if (stamina > maxStamina)
