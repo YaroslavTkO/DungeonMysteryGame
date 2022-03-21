@@ -19671,7 +19671,7 @@ GameObject:
   - component: {fileID: 1363290496}
   - component: {fileID: 1363290495}
   - component: {fileID: 1363290494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_100
   m_TagString: Wall
   m_Icon: {fileID: 0}
