@@ -7,7 +7,7 @@ public class StateIdle : State
         if (Time.timeScale != 0)
             Controller.playerStats.ChangeStaminaValue(0.3f);
         _direction = HandleInput();
-        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1)) &&
+        if (Controller.attackButtonIsPressed &&
             Controller.playerStats.Stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         return _direction != Vector2.zero ? ChangeState(new WalkingState(Controller)) : this;

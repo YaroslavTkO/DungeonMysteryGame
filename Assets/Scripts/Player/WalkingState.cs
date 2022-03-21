@@ -10,7 +10,7 @@ public class WalkingState : State
 
     public override State Update()
     {
-        if ((Controller.attackButtonIsPressed || Input.GetKeyDown(KeyCode.Mouse1)) &&
+        if (Controller.attackButtonIsPressed &&
             Controller.playerStats.Stamina >= 20)
             return ChangeState(new StateAttack(Controller));
         Controller.playerStats.ChangeStaminaValue(-0.06f);
