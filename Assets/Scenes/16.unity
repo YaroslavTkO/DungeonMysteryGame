@@ -25994,6 +25994,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+--- !u!114 &1473239739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4238325116569259266, guid: ab45db9b20bd67f46835634ff097ed31, type: 3}
+  m_PrefabInstance: {fileID: 1473239738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed3d71cd9c20b343917b9c74c160613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475569618
 GameObject:
   m_ObjectHideFlags: 0
@@ -30548,7 +30559,7 @@ PrefabInstance:
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: Display
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1473239739}
     - target: {fileID: 268511825069087592, guid: 7fb91952ec6f08a4c8b6411d5615ab56, type: 3}
       propertyPath: dialogue.nameOfNpc
       value: Unknown Note 10
