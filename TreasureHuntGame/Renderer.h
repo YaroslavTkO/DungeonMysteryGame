@@ -7,6 +7,7 @@ class Window
 {
     int xOnScene;
     int yOnScene;
+
 public:
     sf::RenderWindow Renderer;
     Window(sf::VideoMode videoMode, std::string NameOfWindow) {
@@ -19,13 +20,30 @@ public:
         this->xOnScene = xOnScene;
         this->yOnScene = yOnScene;
     }
-    void SetRenderWindow(sf::VideoMode videoMode, std::string NameOfWindow) {
+    Window(int xOnScene, int yOnScene) {
+        Renderer.create(sf::VideoMode(1600, 900), "StandartName");
+        this->xOnScene = xOnScene;
+        this->yOnScene = yOnScene;
+    }
+    void SetFullscreenWindow() {
+        auto x = sf::VideoMode::getDesktopMode().width;
+        auto y = sf::VideoMode::getDesktopMode().height;
+        Renderer.clear();
+        Renderer.create(sf::VideoMode(x, y), "New Title", sf::Style::Fullscreen);
+    }
+  /*  void SetRenderWindow(sf::VideoMode videoMode, std::string NameOfWindow) {
         Renderer.clear();
         Renderer.create(videoMode, NameOfWindow);
-    }
+    }*/
     void SetCoordsOnScene(int x, int y) {
         xOnScene = x;
         yOnScene = y;
+    }
+    int X() {
+        return xOnScene;
+    }
+    int Y() {
+        return yOnScene;
     }
 };
 
