@@ -10,12 +10,11 @@ sf::CircleShape MouseRound(sf::Vector2i mousePos);
 int main()
 {
 	Window window(0,0);
-	window.SetFullscreenWindow();
 	sf::CircleShape circle(100);
 	circle.setOrigin(sf::Vector2f(100, 100));
 	circle.setFillColor(sf::Color::Black);
 	circle.setPosition(window.Renderer.getSize().x / 2, window.Renderer.getSize().y / 2);
-	//circle.getOrigin().x;
+	std::cout << circle.getOrigin().x;
 	while (window.Renderer.isOpen()) {
 		sf::Event event;
 		while (window.Renderer.pollEvent(event)) {

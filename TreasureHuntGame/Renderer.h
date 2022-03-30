@@ -10,20 +10,15 @@ class Window
 
 public:
     sf::RenderWindow Renderer;
-    Window(sf::VideoMode videoMode, std::string NameOfWindow) {
-        Renderer.create(videoMode, NameOfWindow);
+    Window(int xOnScene, int yOnScene) {
+        this->xOnScene = xOnScene;
+        this->yOnScene = yOnScene;
+        SetFullscreenWindow();
+    }
+    Window() {
         xOnScene = 0;
         yOnScene = 0;
-    }
-    Window(sf::VideoMode videoMode, std::string NameOfWindow, int xOnScene, int yOnScene) {
-        Renderer.create(videoMode, NameOfWindow);
-        this->xOnScene = xOnScene;
-        this->yOnScene = yOnScene;
-    }
-    Window(int xOnScene, int yOnScene) {
-        Renderer.create(sf::VideoMode(1600, 900), "StandartName");
-        this->xOnScene = xOnScene;
-        this->yOnScene = yOnScene;
+        SetFullscreenWindow();
     }
     void SetFullscreenWindow() {
         auto x = sf::VideoMode::getDesktopMode().width;
