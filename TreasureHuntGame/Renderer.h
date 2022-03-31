@@ -26,6 +26,9 @@ public:
         Renderer.clear();
         Renderer.create(sf::VideoMode(x, y), "New Title", sf::Style::Fullscreen);
     }
+    void MoveWindowOnScene(int xPixelsToMove, int yPixelsToMove) {
+
+    }
   /*  void SetRenderWindow(sf::VideoMode videoMode, std::string NameOfWindow) {
         Renderer.clear();
         Renderer.create(videoMode, NameOfWindow);

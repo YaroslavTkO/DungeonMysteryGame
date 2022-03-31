@@ -4,12 +4,21 @@
 #include <iostream>
 
 #include "Renderer.h"
+#include "Scene.h"
+#include "Textures.h"
+#include "Sprite.h"
+//#include "Object.h"
 
 
 sf::CircleShape MouseRound(sf::Vector2i mousePos);
 int main()
 {
-	Window window(0,0);
+	TexturesDatabase texture;
+	sf::Texture texture1;
+	texture1.loadFromFile("Assets/Art/plus.png");
+	texture.AddTextureToDatabase(texture1);
+	Window window(0, 0);
+	SpriteClass sprite(texture1);
 	sf::CircleShape circle(100);
 	circle.setOrigin(sf::Vector2f(100, 100));
 	circle.setFillColor(sf::Color::Black);
@@ -26,9 +35,10 @@ int main()
 		}
 		window.Renderer.clear(sf::Color::White);
 		window.Renderer.draw(circle);
+		window.Renderer.draw(sprite.GetSprite());
 		window.Renderer.draw(MouseRound(sf::Mouse::getPosition(window.Renderer)));
 		window.Renderer.display();
-		
+
 	}
 	std::cout << "Hello world";
 }

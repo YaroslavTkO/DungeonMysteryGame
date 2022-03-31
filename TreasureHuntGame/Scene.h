@@ -3,10 +3,10 @@
 #include <SFML/Graphics.hpp>
 #include "Object.h"
 
-class Scene {
+/*class Scene {
 private:
 	int length;
 	int width;
 	Object* objects;
 
-};
+};*/

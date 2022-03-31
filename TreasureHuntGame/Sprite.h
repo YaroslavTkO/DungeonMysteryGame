@@ -3,17 +3,35 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class Sprite
+#include "Object.h"
+
+class SpriteClass
 {
-	sf::Texture texture;
 	sf::Sprite sprite;
 
-
-	Sprite(std::string pathToImage, sf::IntRect rectOnImageToUse) {
-		if (!texture.loadFromFile(pathToImage)) {
-			std::cout << "Not loaded" << std::endl;
-		}
+public:
+	SpriteClass(sf::Texture &texture, sf::IntRect rectOnImageToUse) {
+		sprite.setTexture(texture);
 		sprite.setTextureRect(rectOnImageToUse);
 	}
-
-}
+	SpriteClass(sf::Texture &texture) {
+		sprite.setTexture(texture);
+	}
+	void ChangeSprite(sf::Texture &texture, sf::IntRect rectOnImageToUse) {
+		sprite.setTexture(texture);
+		sprite.setTextureRect(rectOnImageToUse);
+	}
+	void ChangeSprite(sf::Texture &texture) {
+		sprite.setTexture(texture);
+	}
+	void MoveOnImage(sf::IntRect rectOnImageToUse) {
+		sprite.setTextureRect(rectOnImageToUse);
+	}
+	sf::Sprite GetSprite() {
+		return sprite;
+	}
+	/*	void SetSpriteSize(Size ObjectSize) {
+			auto size = sprite.getLocalBounds();
+			sprite.setScale(sf::Vector2f(ObjectSize.width / size.width, ObjectSize.height / size.height));
+		}*/
+};
