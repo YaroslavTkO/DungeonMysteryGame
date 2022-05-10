@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -41,5 +42,21 @@ public class PlayerController : MonoBehaviour
     public void AttackButtonIsPressed(bool pressed)
     {
         attackButtonIsPressed = pressed;
+    }
+
+    IEnumerator StaminaChange(float amount)
+    {
+        while (true)
+        {
+            if (Time.timeScale != 0)
+                playerStats.ChangeStaminaValue(amount);
+            yield return new WaitForSeconds(0.005f);
+        }
+    }
+
+    public void CoroutineStamina(float amount)
+    {
+        StopAllCoroutines();
+        StartCoroutine(StaminaChange(amount));
     }
 }

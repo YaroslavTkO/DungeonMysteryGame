@@ -1,11 +1,11 @@
+using System;
 using UnityEngine;
 
 public class StateIdle : State
 {
     public override State Update()
     {
-        if (Time.timeScale != 0)
-            Controller.playerStats.ChangeStaminaValue(0.3f);
+        //     Controller.playerStats.ChangeStaminaValue(0.3f);
         _direction = HandleInput();
         if (Controller.attackButtonIsPressed &&
             Controller.playerStats.Stamina >= 20)
@@ -17,6 +17,7 @@ public class StateIdle : State
     {
         Controller = controller;
         Controller._animator.SetBool("Running", false);
+        Controller.CoroutineStamina(0.075f);
     }
 
     public override Vector2 HandleInput()
