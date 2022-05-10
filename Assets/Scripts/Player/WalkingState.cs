@@ -26,7 +26,6 @@ public class WalkingState : State
             Controller.Flip();
         else if (!Controller._facingRight && input.x > 0)
             Controller.Flip();
-        
         return input.normalized;
     }
 
