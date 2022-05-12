@@ -15,8 +15,11 @@ public class BuyButton : MonoBehaviour
     {
         moneyAmount.text = $"{player.money}";
         if (shop.itemToBuy)
+        {
             if (shop.itemToBuy.id > 0)
                 buttonText.text = $"Buy - {shop.itemToBuy.price} coins";
+        }
+        else buttonText.text = "";
     }
 
     public void OnClick()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DisplayPlayerInventory : DisplayInventory1
 {
@@ -13,6 +14,7 @@ public class DisplayPlayerInventory : DisplayInventory1
 
     void Start()
     {
+        AddEvent(trashCan, EventTriggerType.PointerDown, delegate { ThrowItemInTrashCan(); });
         CreateSlots();
         UpdateSlots();
     }
@@ -41,36 +43,37 @@ public class DisplayPlayerInventory : DisplayInventory1
         {
             var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<Transform>().position = slotsToPlaceObjects[i].transform.position;
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            //  AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
+            //  AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+            //  AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
+            //  AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
+            //  AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             DisplayedItems.Add(obj, inventory.slots[i]);
         }
-        
+
         for (int i = 0; i < equippedInventory.slots.Length; i++)
         {
             var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<Transform>().position = slotsToPlaceObjects[i + inventory.slots.Length].transform.position;
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            //  AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
+            //  AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+            //  AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
+            //  AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
+            //   AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             DisplayedItems.Add(obj, equippedInventory.slots[i]);
         }
-        
+
         {
             var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<Transform>().position = slotsToPlaceObjects[inventory.slots.Length + equippedInventory.slots.Length].transform.position;
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            obj.GetComponent<Transform>().position =
+                slotsToPlaceObjects[inventory.slots.Length + equippedInventory.slots.Length].transform.position;
+            //  AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
+            //  AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+            //  AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
+            //  AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
+            //  AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             DisplayedItems.Add(obj, foodInventory.slots[0]);
         }
@@ -98,9 +101,22 @@ public class DisplayPlayerInventory : DisplayInventory1
             equippedInventory.RemoveItem(DisplayedItems[obj]);
             foodInventory.RemoveItem(DisplayedItems[obj]);
         }
-        
+
         Destroy(MouseData.MouseObj);
         MouseData.MouseItem = null;
         _currentlyDragging = false;
+    }
+
+    public void ThrowItemInTrashCan()
+    {
+        if (ItemChecked)
+        {
+            inventory.RemoveItem(MouseData.MouseItem);
+            equippedInventory.RemoveItem(MouseData.MouseItem);
+            foodInventory.RemoveItem(MouseData.MouseItem);
+            ItemChecked = false;
+            foreach (var slotInv in slotsToPlaceObjects)
+                slotInv.GetComponent<Image>().color = new Color(1, 1, 1);
+        }
     }
 }

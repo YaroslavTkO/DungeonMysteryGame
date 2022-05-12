@@ -13,7 +13,7 @@ public class DisplayInventory1 : MonoBehaviour
     public Text descriptionField;
     protected Dictionary<GameObject, InventorySlot> DisplayedItems = new Dictionary<GameObject, InventorySlot>();
     protected InventoryMouseData MouseData = new InventoryMouseData();
-    protected bool _currentlyDragging = false;
+    protected bool _currentlyDragging = false, ItemChecked = false;
 
     void Start()
     {
@@ -32,13 +32,6 @@ public class DisplayInventory1 : MonoBehaviour
         inventory.OnChange -= UpdateSlots;
         Time.timeScale = 1;
     }
-
-    void Update()
-    {
-        // Debug.Log(Time.timeScale);
-        //    UpdateSlots();
-    }
-
     public void CreateSlots()
     {
         DisplayedItems = new Dictionary<GameObject, InventorySlot>();
@@ -89,7 +82,7 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnDragStart(GameObject obj)
     {
-        if (_currentlyDragging)
+        if (_currentlyDragging || DisplayedItems[obj].item.id == 0)
         {
         }
         else
@@ -137,7 +130,34 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
+        Debug.Log(ItemChecked);
+        if (ItemChecked)
+        {
+            MouseData.HoveredSlot = DisplayedItems[obj];
+            if (MouseData.HoveredSlot != MouseData.MouseItem)
+            {
+                inventory.SwapItems(MouseData.HoveredSlot, MouseData.MouseItem);
+                MouseData.MouseItem = DisplayedItems[obj];
+            }
+            else ItemChecked = false;
+        }
+        else if (DisplayedItems[obj].item.id != 0)
+        {
+            ItemChecked = true;
+            MouseData.MouseItem = DisplayedItems[obj];
+        }
         descriptionField.text = DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
+        if (DisplayedItems.ContainsKey(obj) && DisplayedItems[obj].item.id != 0 && ItemChecked)
+            foreach (var slot in slotsToPlaceObjects)
+            {
+                if ((slot.transform.position - obj.transform.position).magnitude <= 1)
+                    slot.GetComponent<Image>().color = new Color(1, 0.8f, 0.8f);
+                else slot.GetComponent<Image>().color = new Color(1, 1, 1);
+            }
+        else
+            foreach (var slotInv in slotsToPlaceObjects)
+                slotInv.GetComponent<Image>().color = new Color(1, 1, 1);
+
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)

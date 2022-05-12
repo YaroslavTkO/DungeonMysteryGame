@@ -115,7 +115,13 @@ public class Inventory : ScriptableObject
             database = copyDatabase;
             ClearInventory();
         }
-        
+
+        foreach (var slot in slots)
+        {
+            if (!slot.item)
+                slot.item = database.items[0];
+
+        }
         OnChange?.Invoke();
     }
 }

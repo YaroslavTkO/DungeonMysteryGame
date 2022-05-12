@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DisplayShop : DisplayInventory1
@@ -24,10 +25,31 @@ public class DisplayShop : DisplayInventory1
             DisplayedItems.Add(obj, inventory.slots[i]);
         }
     }
+
     private new void OnPointerDown(GameObject obj)
     {
-        descriptionField.text =DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
-        itemToBuy = DisplayedItems[obj].item;
+        if (itemToBuy == DisplayedItems[obj].item)
+        {
+            ItemChecked = false;
+            descriptionField.text = "";
+            itemToBuy = null;
+        }
+        else
+        {
+            ItemChecked = true;
+            descriptionField.text = DisplayedItems.ContainsKey(obj) ? DisplayedItems[obj].item.description : "";
+            itemToBuy = DisplayedItems[obj].item;
+        }
+
+        if (ItemChecked)
+            foreach (var slot in slotsToPlaceObjects)
+            {
+                if ((slot.transform.position - obj.transform.position).magnitude <= 1)
+                    slot.GetComponent<Image>().color = new Color(1, 0.8f, 0.8f);
+                else slot.GetComponent<Image>().color = new Color(1, 1, 1);
+            }
+        else
+            foreach (var slot in slotsToPlaceObjects)
+                slot.GetComponent<Image>().color = new Color(1, 1, 1);
     }
-    
 }
