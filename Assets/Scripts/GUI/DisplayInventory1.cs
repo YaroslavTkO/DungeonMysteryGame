@@ -13,7 +13,7 @@ public class DisplayInventory1 : MonoBehaviour
     public Text descriptionField;
     protected Dictionary<GameObject, InventorySlot> DisplayedItems = new Dictionary<GameObject, InventorySlot>();
     protected InventoryMouseData MouseData = new InventoryMouseData();
-    protected bool _currentlyDragging = false, ItemChecked = false;
+    protected bool /*_currentlyDragging = false,*/ ItemChecked = false;
 
     void Start()
     {
@@ -39,11 +39,11 @@ public class DisplayInventory1 : MonoBehaviour
         {
             var obj = Instantiate(slotObject, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<Transform>().position = slotsToPlaceObjects[i].transform.position;
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+       //     AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
+        //    AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+        //    AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
+        //    AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
+        //    AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
             AddEvent(obj, EventTriggerType.PointerDown, delegate { OnPointerDown(obj); });
             DisplayedItems.Add(obj, inventory.slots[i]);
         }
@@ -69,7 +69,7 @@ public class DisplayInventory1 : MonoBehaviour
         }
     }
 
-    public void OnEnter(GameObject obj)
+    /*public void OnEnter(GameObject obj)
     {
         if (DisplayedItems.ContainsKey(obj))
             MouseData.HoveredSlot = DisplayedItems[obj];
@@ -126,7 +126,7 @@ public class DisplayInventory1 : MonoBehaviour
         {
             MouseData.MouseObj.GetComponent<RectTransform>().position = Input.mousePosition;
         }
-    }
+    }*/
 
     public void OnPointerDown(GameObject obj)
     {

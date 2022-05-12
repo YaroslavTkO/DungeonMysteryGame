@@ -79,7 +79,7 @@ public class DisplayPlayerInventory : DisplayInventory1
         }
     }
 
-    public void OnTrashCanEnter()
+    /*public void OnTrashCanEnter()
     {
         inTrashCan = true;
     }
@@ -105,7 +105,7 @@ public class DisplayPlayerInventory : DisplayInventory1
         Destroy(MouseData.MouseObj);
         MouseData.MouseItem = null;
         _currentlyDragging = false;
-    }
+    }*/
 
     public void ThrowItemInTrashCan()
     {
