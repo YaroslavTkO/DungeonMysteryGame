@@ -5,10 +5,14 @@ public class StateIdle : State
 {
     public override State Update()
     {
-        //     Controller.playerStats.ChangeStaminaValue(0.3f);
+        if (Controller.playerStats.staminaRegenChanged)
+        {
+            Controller.CoroutineStamina(Controller.playerStats.staminaRegen);
+            Controller.playerStats.staminaRegenChanged = false;
+        }
         _direction = HandleInput();
         if (Controller.attackButtonIsPressed &&
-            Controller.playerStats.Stamina >= 20)
+            Controller.playerStats.Stamina >= Controller.playerStats.attackStaminaUsage)
             return ChangeState(new StateAttack(Controller));
         return _direction != Vector2.zero ? ChangeState(new WalkingState(Controller)) : this;
     }
@@ -17,7 +21,7 @@ public class StateIdle : State
     {
         Controller = controller;
         Controller._animator.SetBool("Running", false);
-        Controller.CoroutineStamina(0.075f);
+        Controller.CoroutineStamina(Controller.playerStats.staminaRegen);
     }
 
     public override Vector2 HandleInput()

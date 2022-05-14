@@ -12,7 +12,7 @@ public class WalkingState : State
     public override State Update()
     {
         if (Controller.attackButtonIsPressed &&
-            Controller.playerStats.Stamina >= 20)
+            Controller.playerStats.Stamina >= Controller.playerStats.attackStaminaUsage)
             return ChangeState(new StateAttack(Controller));
         // Controller.playerStats.ChangeStaminaValue(-0.06f);
         _direction = HandleInput();

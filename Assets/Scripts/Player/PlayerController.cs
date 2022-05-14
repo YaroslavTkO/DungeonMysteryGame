@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private State currentState;
     public bool attackButtonIsPressed;
+    private IEnumerator StaminaCor;
 
     private void Start()
     {
@@ -25,6 +26,12 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D.AddForce(Vector2.zero);
         currentState = currentState.Update();
+        if (playerStats.healthRegenChanged)
+        {
+            playerStats.healthRegenChanged = false;
+            StopCoroutine(nameof(HpChange));
+            StartCoroutine(HpChange());
+        }
     }
 
     private void FixedUpdate()
@@ -48,15 +55,28 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            //  Debug.Log("Amount: " + amount);
             if (Time.timeScale != 0)
                 playerStats.ChangeStaminaValue(amount);
             yield return new WaitForSeconds(0.005f);
         }
     }
 
+    IEnumerator HpChange()
+    {
+        while (playerStats.HealthRegen > 0.000001 || playerStats.HealthRegen < -0.000001)
+        {
+            if (Time.timeScale != 0)
+                playerStats.ChangeHpValue(playerStats.HealthRegen);
+            yield return new WaitForSeconds(0.0025f);
+        }
+    }
+
     public void CoroutineStamina(float amount)
     {
-        StopAllCoroutines();
-        StartCoroutine(StaminaChange(amount));
+        if (StaminaCor != null)
+            StopCoroutine(StaminaCor);
+        StaminaCor = StaminaChange(amount);
+        StartCoroutine(StaminaCor);
     }
 }

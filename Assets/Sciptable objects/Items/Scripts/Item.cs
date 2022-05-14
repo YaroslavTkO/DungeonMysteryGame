@@ -41,5 +41,12 @@ public enum Boost
     HealAmount,
     StaminaHealAmount,
     Speed,
-    AttackPower
+    AttackPower,
+    AttackSpeed,
+    StaminaRegeneration,
+    AttackLength,
+    AttackStaminaUsage,
+    HealthRegeneration,
+    
+    
 }

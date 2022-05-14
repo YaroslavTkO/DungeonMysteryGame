@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1ffc58cbf7e8445b271b53a7e3573e, type: 3}
+  m_Name: TestItme
+  m_EditorClassIdentifier: 
+  id: 28
+  itemSprite: {fileID: 8345168225771048080, guid: a233dc8c397a4ac43b7f7792b65af3ad, type: 3}
+  type: 6
+  isStakable: 0
+  boosts:
+  - boostType: 8
+    value: 5
+  - boostType: 7
+    value: 0.2
+  - boostType: 6
+    value: 0.1
+  - boostType: 9
+    value: 50
+  - boostType: 10
+    value: 0.001
+  price: 0
+  description: 'okdfoskjdoidj Test Mega Imba
+
+    dspdpsldpsldpsldpsp Vie vie chu
+    chu ba ba balp'

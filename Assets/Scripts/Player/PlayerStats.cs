@@ -19,14 +19,25 @@ public class PlayerStats : MonoBehaviour
     public float movementSpeed = 5;
     public float exhaustedMovementSpeed = 2;
 
+    public float staminaRegen = 0.075f;
+    public float staminaRegenWithoutBuffs = 0.075f;
+    public float HealthRegenBase = 0;
+    public float HealthRegen = 0;
+
     public float damageWithoutBuffs;
     public float damage = 1.0f;
     public Transform attackPoint;
     public float attackRange;
+    public float attackRangeWithoutBuffs = 1;
+    public float attackStaminaUsage = 10;
+    public float attackStaminaUsageBase = 10;
     public LayerMask enemyLayers;
 
     private float invincibilityTime = 0.7f;
     private float savedStartInvincibilityTime;
+
+    public float attackAnimBaseSpeed = 1.0f;
+    public float attackAnimSpeed = 1.0f;
 
     public float experience = 0;
     public int currentLevel = 1;
@@ -42,6 +53,8 @@ public class PlayerStats : MonoBehaviour
     private Bar staminaBarCopy;
     private PlayerInventory inventoryCopy;
 
+
+    public bool staminaRegenChanged, healthRegenChanged;
     private void Start()
     {
         inventory.inventory.database.Serialize();
@@ -51,7 +64,7 @@ public class PlayerStats : MonoBehaviour
         hp = maxHp;
         healthBar.SetMaxValueOnBar(maxHp);
         staminaBar.SetMaxValueOnBar(maxStamina);
-
+        
         BaseEnemy.Attacked += TakeDamage;
         Enemy.Killed += KilledEnemy;
         inventory.equippedInventory.OnChange += UpdateInventoryBuffs;
@@ -106,6 +119,11 @@ public class PlayerStats : MonoBehaviour
         maxStamina = maxStaminaWithoutBuffs;
         movementSpeed = movementSpeedWithoutBuffs;
         damage = damageWithoutBuffs;
+        attackRange = attackRangeWithoutBuffs;
+        attackAnimSpeed = attackAnimBaseSpeed;
+        staminaRegen = staminaRegenWithoutBuffs;
+        attackStaminaUsage = attackStaminaUsageBase;
+        HealthRegen = HealthRegenBase;
         foreach (var slot in inventory.equippedInventory.slots)
         {
             if (slot.item.id == 0)
@@ -125,7 +143,21 @@ public class PlayerStats : MonoBehaviour
                         break;
                     case Boost.MaxStamina:
                         maxStamina += boost.value;
-
+                        break;
+                    case Boost.StaminaRegeneration:
+                        staminaRegen += boost.value;
+                        break;
+                    case Boost.AttackLength:
+                        attackRange += boost.value;
+                        break;
+                    case Boost.AttackSpeed:
+                        attackAnimSpeed += boost.value;
+                        break;
+                    case Boost.AttackStaminaUsage:
+                        attackStaminaUsage += boost.value;
+                        break;
+                    case Boost.HealthRegeneration:
+                        HealthRegen += boost.value;
                         break;
                 }
             }
@@ -142,6 +174,8 @@ public class PlayerStats : MonoBehaviour
         staminaBar.SetValueOnBar(stamina);
         healthBar.SetOnlyMaxValueOnBar(maxHp);
         healthBar.SetValueOnBar(hp);
+        staminaRegenChanged = true;
+        healthRegenChanged = true;
     }
 
     public void LevelUp(int type)

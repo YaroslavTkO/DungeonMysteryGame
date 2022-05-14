@@ -130,7 +130,6 @@ public class DisplayInventory1 : MonoBehaviour
 
     public void OnPointerDown(GameObject obj)
     {
-        Debug.Log(ItemChecked);
         if (ItemChecked)
         {
             MouseData.HoveredSlot = DisplayedItems[obj];
@@ -158,6 +157,8 @@ public class DisplayInventory1 : MonoBehaviour
             foreach (var slotInv in slotsToPlaceObjects)
                 slotInv.GetComponent<Image>().color = new Color(1, 1, 1);
 
+        if (!ItemChecked)
+            descriptionField.text = "";
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
